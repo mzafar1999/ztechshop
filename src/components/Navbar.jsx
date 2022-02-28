@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import {BiSearch} from 'react-icons/bi'
-import {FaOpencart} from 'react-icons/fa'
-import {MdAccountCircle} from 'react-icons/md'
+import { BiSearch } from 'react-icons/bi';
+import { FaOpencart } from 'react-icons/fa';
+import { MdAccountCircle } from 'react-icons/md';
 
 const Container = styled.div`
 	height: 90px;
-    width: 100%;
-    padding: 30px 0;
+	width: 100%;
+	padding: 30px 0;
 `;
 const Left = styled.div``;
 const Center = styled.div``;
@@ -19,8 +19,8 @@ const Image = styled.img`
 	width: 100%;
 `;
 const LinkWrapper = styled.div`
-    margin: 0 20px;
-    padding: 10px;
+	margin: 0 20px;
+	padding: 10px;
 `;
 const NavLink = styled(Link)`
     text-decoration: none;
@@ -28,20 +28,20 @@ const NavLink = styled(Link)`
 `;
 
 const ReactIconWrapper = styled.div`
-margin: 0 10px;
-padding: 5px;
-cursor: pointer;
+	margin: 0 10px;
+	padding: 5px;
+	cursor: pointer;
 `;
 
 const Navbar = () => {
 	return (
-		<Container className='d-flex justify-content-around'>
+		<Container className="d-flex justify-content-around">
 			<Left>
 				<ImageWrapper>
 					<Image src="/images/logo.png" />
 				</ImageWrapper>
 			</Left>
-			<Center className='d-flex'>
+			<Center className="d-flex">
 				<LinkWrapper>
 					<NavLink to="/">Home</NavLink>
 				</LinkWrapper>
@@ -56,17 +56,17 @@ const Navbar = () => {
 				</LinkWrapper>
 			</Center>
 
-        <Right className='d-flex '>
-        <ReactIconWrapper>
-            <BiSearch/>
-        </ReactIconWrapper>
-        <ReactIconWrapper>
-            <FaOpencart/>
-        </ReactIconWrapper>
-        <ReactIconWrapper>
-            <MdAccountCircle/>
-        </ReactIconWrapper>
-        </Right>
+			<Right className="d-flex ">
+				<ReactIconWrapper>
+					<BiSearch />
+				</ReactIconWrapper>
+				<ReactIconWrapper>
+					<FaOpencart />
+				</ReactIconWrapper>
+				<ReactIconWrapper>
+					<MdAccountCircle />
+				</ReactIconWrapper>
+			</Right>
 		</Container>
 	);
 };

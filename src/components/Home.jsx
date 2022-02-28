@@ -1,8 +1,18 @@
 import React from 'react'
+import styled from 'styled-components';
+import Navbar from './Navbar';
 
+
+const Container = styled.div`
+    display: flex;
+`;
+
+ 
 const Home = () => {
   return (
-    <div>Home</div>
+    <Container>
+     <Navbar/>
+    </Container>
   )
 }
 

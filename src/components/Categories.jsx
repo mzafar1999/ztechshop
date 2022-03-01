@@ -3,25 +3,25 @@ import styled from 'styled-components'
 import { catagroydata } from './categoriesdata'
 
 
-const Container = styled.section`
+export const Container = styled.section`
 `
-const Row = styled.div`
+export const Row = styled.div`
     
 `
-const Col = styled.div`
+export const Col = styled.div`
 `
-const TitleWrapper = styled.div``
-const Title = styled.h1``
-const SubTitle = styled.p``
-const CardWrapper = styled.div``
-const ImageWrapper = styled.div``
-const Image = styled.img`
+export const TitleWrapper = styled.div``
+export const Title = styled.h1``
+export const SubTitle = styled.p``
+export const CardWrapper = styled.div``
+export const ImageWrapper = styled.div``
+export const Image = styled.img`
     width: 100%;
     height: 100%;
     border-radius: 50%;
     border: 1px solid #cccccc;
 `
-const Button = styled.button`
+export const Button = styled.button`
     
 `
 const Categories = () => {

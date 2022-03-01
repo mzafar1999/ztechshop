@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import Categories from './Categories';
+import Featured from './Featured';
 import Navbar from './Navbar';
 import Slider from './Slider';
 
@@ -17,6 +18,7 @@ const Home = () => {
      <Navbar/>
      <Slider/>
      <Categories/>
+     <Featured/>
     </Container>
   )
 }

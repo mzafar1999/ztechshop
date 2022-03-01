@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import Categories from './Categories';
 import Navbar from './Navbar';
 import Slider from './Slider';
 
@@ -15,6 +16,7 @@ const Home = () => {
     <Container>
      <Navbar/>
      <Slider/>
+     <Categories/>
     </Container>
   )
 }

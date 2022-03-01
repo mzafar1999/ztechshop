@@ -41,7 +41,7 @@ const handleDragStart = (e) => e.preventDefault();
 
 const Slider = () => {
 	return (
-		<AliceCarousel
+		<AliceCarousel autoPlay={true} infinite={true} animationDuration={2000} autoPlayInterval={1500} animationType={'fadeout'}
 			mouseTracking
 			items={sliderdata.map((item) => {
 				return (

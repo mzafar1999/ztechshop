@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import Categories from './Categories';
 import Featured from './Featured';
+import Footer from './Footer';
 import Navbar from './Navbar';
 import Slider from './Slider';
 
@@ -19,6 +20,7 @@ const Home = () => {
      <Slider/>
      <Categories/>
      <Featured/>
+     <Footer/>
     </Container>
   )
 }

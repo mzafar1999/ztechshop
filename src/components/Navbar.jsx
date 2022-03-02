@@ -10,13 +10,24 @@ const Container = styled.div`
 	width: 100%;
 	padding: 30px 0;
 `;
-const Left = styled.div``;
-const Center = styled.div``;
-const Right = styled.div``;
-const ImageWrapper = styled.div`height: 90px;`;
+const Left = styled.div`
+	/* flex: 1; */
+`;
+const Center = styled.div`
+	/* flex: 1; */
+`;
+const Right = styled.div`
+	/* flex: 1; */
+`;
+const ImageWrapper = styled.div`
+	height: 6rem;
+	width:15rem;
+	padding: 30px;
+;`;
 const Image = styled.img`
-	height: 50%;
+	height: 100%;
 	width: 100%;
+	object-fit: cover;
 `;
 const LinkWrapper = styled.div`
 	margin: 0 20px;
@@ -35,7 +46,7 @@ const ReactIconWrapper = styled.div`
 
 const Navbar = () => {
 	return (
-		<Container className="d-flex justify-content-around">
+		<Container className="d-flex justify-content-around align-items-center">
 			<Left>
 				<ImageWrapper>
 					<Image src="/images/logo.png" />

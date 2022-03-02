@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components';
-import Categories from './Categories';
-import Featured from './Featured';
-import Footer from './Footer';
-import Navbar from './Navbar';
-import Slider from './Slider';
+import Categories from '../components/Categories';
+import Featured from '../components/Featured';
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
+import Slider from '../components/Slider';
 
 
 const Container = styled.div`

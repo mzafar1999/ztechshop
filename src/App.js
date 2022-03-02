@@ -2,7 +2,7 @@ import './App.css';
 
 import {BrowserRouter as Router, Switch,Route} from 'react-router-dom'
 import TopNav from './components/TopNav';
-import Home from './components/Home';
+import Home from './Views/Home';
 
 function App() {
   return (

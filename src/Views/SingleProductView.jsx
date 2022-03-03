@@ -4,6 +4,7 @@ import CarouselComp from '../components/CarouselComp'
 import { Button, Col, Container, Row } from '../components/Categories'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
+import RelatedProducts from '../components/RelatedProducts'
 
 
 
@@ -57,6 +58,7 @@ const SingleProductView = () => {
           </Col>
         </Row>
         </ContainerSmall>
+        <RelatedProducts/>
        <Footer/>
     </Container>
   )

@@ -8,6 +8,8 @@ import { MdAccountCircle } from 'react-icons/md';
 const Container = styled.div`
 	height: 90px;
 	width: 100%;
+	background-color: #ffffff;
+	margin-bottom: 48px;
 	padding: 30px 0;
 `;
 const Left = styled.div`

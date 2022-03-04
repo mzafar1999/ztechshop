@@ -13,7 +13,9 @@ export const Col = styled.div`
 export const TitleWrapper = styled.div``
 export const Title = styled.h1``
 export const SubTitle = styled.p``
-export const CardWrapper = styled.div``
+export const CardWrapper = styled.div`
+    
+`
 export const ImageWrapper = styled.div``
 export const Image = styled.img`
     width: 100%;

@@ -9,7 +9,7 @@ const Container = styled.div`
 	height: 90px;
 	width: 100%;
 	background-color: #ffffff;
-	margin-bottom: 48px;
+	margin-bottom: 8px;
 	padding: 30px 0;
 `;
 const Left = styled.div`
@@ -48,7 +48,7 @@ const ReactIconWrapper = styled.div`
 
 const Navbar = () => {
 	return (
-		<Container className="d-flex justify-content-around align-items-center">
+		<Container className="shadow d-flex justify-content-around align-items-center">
 			<Left>
 				<ImageWrapper>
 					<Image src="/images/logo.png" />
@@ -59,7 +59,7 @@ const Navbar = () => {
 					<NavLink to="/">Home</NavLink>
 				</LinkWrapper>
 				<LinkWrapper>
-					<NavLink to="/about">About</NavLink>
+					<NavLink to="/product/:id">Item</NavLink>
 				</LinkWrapper>
 				<LinkWrapper>
 					<NavLink to="/shop">Shop</NavLink>

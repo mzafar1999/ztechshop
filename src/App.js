@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Switch,Route} from 'react-router-dom'
 import TopNav from './components/TopNav';
 import Home from './Views/Home';
 import SingleProductView from './Views/SingleProductView';
+import ShopView from './Views/ShopView';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
         </Route>
         <Route path={`/product/:id`}>
           <SingleProductView></SingleProductView>
+        </Route>
+        <Route path={`/shop`}>
+          <ShopView></ShopView>
         </Route>
       </Switch>
     </Router>

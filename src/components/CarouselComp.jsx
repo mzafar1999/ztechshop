@@ -7,13 +7,16 @@ const CarouselComp = () => {
     <div className="carousel-wrapper">
     <Carousel infiniteLoop useKeyboardArrows autoPlay>
         <div>
-            <img src="/images/banner1.jpg" />
+            <img src="/images/macbook0.jpg" />
         </div>
         <div>
-        <img src="/images/banner2.jpg" />
+        <img src="/images/macbook1.jpg" />
         </div>
         <div>
-        <img src="/images/banner3.jpg" />
+        <img src="/images/macbook2.jpg" />
+        </div>
+        <div>
+        <img src="/images/macbook3.jpg" />
         </div>
     </Carousel>
 </div>

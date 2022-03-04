@@ -6,7 +6,7 @@ import Home from './Views/Home';
 import SingleProductView from './Views/SingleProductView';
 import ShopView from './Views/ShopView';
 import CartView from './Views/CartView';
-
+import './App.css';
 function App() {
   return (
     <Router>

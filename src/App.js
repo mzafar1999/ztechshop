@@ -5,6 +5,7 @@ import TopNav from './components/TopNav';
 import Home from './Views/Home';
 import SingleProductView from './Views/SingleProductView';
 import ShopView from './Views/ShopView';
+import CartView from './Views/CartView';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
         </Route>
         <Route path={`/shop`}>
           <ShopView></ShopView>
+        </Route>
+        <Route path={`/cart`}>
+          <CartView></CartView>
         </Route>
       </Switch>
     </Router>

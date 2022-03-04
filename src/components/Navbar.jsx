@@ -48,7 +48,7 @@ const ReactIconWrapper = styled.div`
 
 const Navbar = () => {
 	return (
-		<Container className="shadow d-flex justify-content-around align-items-center">
+		<Container className="d-flex justify-content-around align-items-center">
 			<Left>
 				<ImageWrapper>
 					<Image src="/images/logo.png" />

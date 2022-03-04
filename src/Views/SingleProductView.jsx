@@ -18,7 +18,7 @@ const SingleProductView = () => {
     return (
     <Container style={{backgroundColor:'#eeeded'}}>
        <Navbar/>
-        <ContainerSmall className='container mb-5' >
+        <ContainerSmall className='container mb-5 mt-5' >
         <Row className='row'>
           <Col className='col-lg-5 col-md-5' >
             <CarouselComp/>

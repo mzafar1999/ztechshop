@@ -9,8 +9,11 @@ const Container = styled.div`
 	height: 90px;
 	width: 100%;
 	background-color: #ffffff;
-	margin-bottom: 8px;
 	padding: 30px 0;
+	border-bottom: 1px solid gray;
+	-webkit-box-shadow: -1px 8px 20px -4px #0000004b; 
+box-shadow: -1px 8px 20px -4px #00000068;
+z-index: 100;
 `;
 const Left = styled.div`
 	/* flex: 1; */
@@ -65,7 +68,7 @@ const Navbar = () => {
 					<NavLink to="/shop">Shop</NavLink>
 				</LinkWrapper>
 				<LinkWrapper>
-					<NavLink to="/contact">Contact</NavLink>
+					<NavLink to="/cart">Contact</NavLink>
 				</LinkWrapper>
 			</Center>
 

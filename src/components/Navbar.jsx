@@ -10,9 +10,8 @@ const Container = styled.div`
 	width: 100%;
 	background-color: #ffffff;
 	padding: 30px 0;
-	border-bottom: 1px solid gray;
-	-webkit-box-shadow: -1px 8px 20px -4px #0000004b; 
-box-shadow: -1px 8px 20px -4px #00000068;
+	-webkit-box-shadow: -1px 8px 10px -4px #0000004b; 
+box-shadow: -1px 8px 10px -4px #00000068;
 z-index: 100;
 `;
 const Left = styled.div`

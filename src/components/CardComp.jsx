@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import {TiStarFullOutline,TiStarHalfOutline,TiStarOutline} from 'react-icons/ti'
 import '../App.css'
-const Title = styled.h1``
 const Text = styled.p`
     font-size: ${props=>props.medium && '14px'};
     font-weight: ${props=>props.bold && 'bold'} ;
@@ -18,12 +17,20 @@ const ImageWrapper = styled.div`
 `
 const StarDiv = styled.div``
 const Card = styled.div`
-    border-radius: 12px ;
+    border-radius: 12px;
+    margin-left:0 !important ;
+    margin-right: 0 !important ;
+    @media (min-width: 786px) {
+        max-width:300px ;
+        min-height: 434px ;
+
+    max-height: 434px ;
+    }
 `
 const Image = styled.img`
     width: 100%;
     height: 100%;
-    
+    object-fit:contain ;
 `
 const Strike = styled.del`
     color: #cc3b3b;
@@ -31,19 +38,20 @@ const Strike = styled.del`
 `
 const AddToCartBtn = styled.button`
     color: #08f26a;
-	font-size: 14px;
+	font-size: 12px;
 	text-transform: uppercase;
 	font-weight: bold;
 	background: none;
 	border: 1px solid #08f26a;
-	padding: 10px 16px;
+	padding: 10px 10px;
 	margin-top: 5px;
 	line-height: 16px;
 	border-radius: 20px;
+    width:200px ;
+    margin: 0 auto;
     font-family: 'Open Sans', sans-serif;
-    @media (min-width:586px) {
-        width: 50%;
-        margin: 0 auto ;
+    @media (min-width:486px) {
+        width:130px ;
     }
     &:hover{
         color: #ffffff;
@@ -63,22 +71,22 @@ const AddToCartBtn = styled.button`
 const LinkComp = styled(Link)`
     text-decoration:none ;
     color:#06d35b;
-    font-weight:bold ;
+    font-size:16px ;
     &:hover{
         color:#05ac4a
     }
 `
-const CardComp = ({img,title,price,gpu}) => {
+    const CardComp = ({images,thumbnail,name,price,gpu}) => {
     let oldPrice = price;
     let newPrice = parseInt(Math.round(price - (oldPrice * 0.2)))
-  return (
-    <Card className='card mx-2 mb-5 shadow-sm p-1'>
+    return (
+    <Card className='card mx-2 mb-5 shadow-sm p-1 d-flex flex-column justify-content-around'>
                 <ImageWrapper className='my-auto'>
-                    <Image className='w-75 my-auto mt-4' src={img}/>
+                    <Image className='w-75 my-auto mt-4' src={thumbnail}/>
                 </ImageWrapper>
                 <Text className='h5 text-center mt-3 mb-1'>
                    <LinkComp>
-                   {title}
+                   {name}
                    </LinkComp>
                 </Text>
                 <Text className='text-center mt-2 mb-2'>

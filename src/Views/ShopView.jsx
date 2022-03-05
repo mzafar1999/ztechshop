@@ -3,6 +3,7 @@ import styled from "styled-components";
 import CardComp from "../components/CardComp";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { allProducts } from "../components/products";
 
 export const ContainerFluid = styled.section``;
 export const Container = styled.section``;
@@ -62,16 +63,7 @@ const CategoryBox = styled.div`
 `;
 const FiltersBox = styled.div``;
 
-const reletedProduct = [
-  { id: 1, img: "/images/iphone12_thumb_optz.png", title: "iPhone 12", price:369 ,gpu: "i3/i5/i7" },
-  { id: 2, img: "/images/r2.jpg", title: "Dell Inspiron", gpu: "i3/i5/i7" },
-  { id: 3, img: "/images/r3.jpg", title: "Dell Inspiron", gpu: "i3/i5/i7" },
-  { id: 4, img: "/images/r4.jpg", title: "Dell Inspiron", gpu: "i3/i5/i7" },
-  { id: 5, img: "/images/r1.jpg", title: "Dell Inspiron", gpu: "i3/i5/i7" },
-  { id: 6, img: "/images/r2.jpg", title: "Dell Inspiron", gpu: "i3/i5/i7" },
-  { id: 7, img: "/images/r3.jpg", title: "Dell Inspiron", gpu: "i3/i5/i7" },
-  { id: 8, img: "/images/r4.jpg", title: "Dell Inspiron", gpu: "i3/i5/i7" },
-];
+let products = allProducts;
 
 const ShopView = () => {
   return (
@@ -132,10 +124,11 @@ const ShopView = () => {
                 </SortBox>
               </Row>
               <Row className="row">
-                {reletedProduct.map((product) => {
+                {allProducts.map((product) => {
+
                   return (
-                    <Col className="col-lg-4 col-md-6">
-                      <CardComp {...product} />
+                    <Col className="col-xl-4 col-md-6">
+                      <CardComp {...product} thumbnail={product.images[0].imageLink} />
                     </Col>
                   );
                 })}

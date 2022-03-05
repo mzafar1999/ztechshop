@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
-import { Col, Container, Row } from "./Categories";
+import { Container, Row } from "./Categories";
+import {TiStarFullOutline,TiStarHalfOutline,TiStarOutline} from 'react-icons/ti'
 
 const Title = styled.h1``;
 const Text = styled.p``;
@@ -20,7 +22,22 @@ const reletedProduct = [
   { id: 4, img: "/images/r4.jpg", title: "Dell Inspiron", gpu: "i3/i5/i7" },
 ];
 
+const Col = styled.div`
+  display:grid ;
+  grid-template-columns:repeat(4,1fr) ;
+  @media (max-width:786px) {
+    grid-template-columns:repeat(2,1fr) ;
+  }
+  @media (max-width:586px) {
+    grid-template-columns:repeat(1,1fr) ;
+  }
+`
 const RelatedProducts = () => {
+  const allProducts = useSelector(state=>state.products.allProducts)
+  const currentProductCat = useSelector(state=>state.products.currentProduct.category)
+  let relatedProducts = allProducts.filter((product)=>product.category===currentProductCat).slice(1,5)
+  console.log(relatedProducts);
+
   return (
     <Container className="container-fluid" style={{ backgroundColor: "#fff" }}>
       <Container className="container">
@@ -29,18 +46,24 @@ const RelatedProducts = () => {
             <Title className="h4 mt-5 mb-3 mx-3">Related Products</Title>
           </Col>
         </Row>
-        <Row className="row">
-          <Col className="col-12 d-flex p-5">
-            {reletedProduct.map((product) => {
+        <Row className="">
+          <Col className="">
+            {relatedProducts.map((product) => {
               return (
                 <Card className="card mx-2 mb-5 shadow p-1">
                   <ImageWrapper>
-                    <Image src={product.img} />
+                    <Image src={product.images[0].imageLink} />
                   </ImageWrapper>
-                  <Text>{product.title}</Text>
+                  <Text className="text-center">{product.name}</Text>
                   <Text>{product.gpu}</Text>
-                  <StarDiv className="text-center">*****</StarDiv>
-                  <Text className="text-center">250$</Text>
+                  <StarDiv className='mb-3 text-center'>
+                   <TiStarFullOutline style={{color:'#FFEB00'}} size={25}/>
+                   <TiStarFullOutline style={{color:'#FFEB00'}} size={25}/>
+                   <TiStarFullOutline style={{color:'#FFEB00'}} size={25}/>
+                   <TiStarHalfOutline style={{color:'#FFEB00'}} size={25}/>
+                   <TiStarOutline style={{color:'#FFEB00'}} size={25}/>
+                </StarDiv>
+                  <Text className="text-center">{product.price-(product.price*0.2)}$</Text>
                 </Card>
               );
             })}

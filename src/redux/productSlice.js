@@ -6,10 +6,14 @@ const productsSLice = createSlice({
     initialState:{
         allProducts,
         currentProduct:{},
-        filteredProducts:[]
+        filteredProducts:[],
+        relatedProducts:[]
     },reducers:{
         selectCurretProduct : (state,action)=>{
             state.currentProduct = action.payload
+        },
+        setRelatedProducts : (state,action)=>{
+            state.relatedProducts = action.payload
         },
         
     }

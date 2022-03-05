@@ -1,4 +1,6 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import CarouselComp from '../components/CarouselComp'
 import { Button, Col, Container, Row } from '../components/Categories'
@@ -14,6 +16,9 @@ const ContainerSmall = styled.div`
 
 const SingleProductView = () => {
 
+    const location = useLocation()
+    console.log(location);
+    // const getSingleProduct = useSelector()
 
     return (
     <Container style={{backgroundColor:'#eeeded'}}>

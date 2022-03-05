@@ -76,16 +76,18 @@ const LinkComp = styled(Link)`
         color:#05ac4a
     }
 `
-    const CardComp = ({images,thumbnail,name,price,gpu}) => {
+    const CardComp = ({id,images,thumbnail,name,price,gpu}) => {
     let oldPrice = price;
     let newPrice = parseInt(Math.round(price - (oldPrice * 0.2)))
     return (
     <Card className='card mx-2 mb-5 shadow-sm p-1 d-flex flex-column justify-content-around'>
+                <LinkComp to={`/product/${id}`}>
                 <ImageWrapper className='my-auto'>
                     <Image className='w-75 my-auto mt-4' src={thumbnail}/>
                 </ImageWrapper>
+                    </LinkComp>
                 <Text className='h5 text-center mt-3 mb-1'>
-                   <LinkComp>
+                   <LinkComp to={`/product/${id}`}>
                    {name}
                    </LinkComp>
                 </Text>

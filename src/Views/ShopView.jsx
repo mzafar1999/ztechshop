@@ -3,7 +3,7 @@ import styled from "styled-components";
 import CardComp from "../components/CardComp";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import { allProducts } from "../components/products";
+import {useSelector} from 'react-redux'
 
 export const ContainerFluid = styled.section``;
 export const Container = styled.section``;
@@ -63,9 +63,11 @@ const CategoryBox = styled.div`
 `;
 const FiltersBox = styled.div``;
 
-let products = allProducts;
 
 const ShopView = () => {
+
+  let allProducts = useSelector(state=>state.products.allProducts)
+  console.log(allProducts);
   return (
     <>
       <Navbar />

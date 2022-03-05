@@ -47,6 +47,7 @@ export const allProducts = [
       { id: 4, imageLink: "/images/products/s10_03.jpg" },
       { id: 5, imageLink: "/images/products/s10_04.jpg" },
       { id: 6, imageLink: "/images/products/s10_05.jpg" },
+      { id: 6, imageLink: "/images/products/s10_06.jpg" },
   ],
   },
   {
@@ -89,10 +90,12 @@ export const allProducts = [
     reviews: [{ id: 331, user: "Shahid", comment: "Phone is best for academic activities" }],
     images: [
       { id: 0, imageLink: "/images/products/p40_thumb.png" },
-      { id: 1, imageLink: "/images/products/iphone12_01.jpg" },
-      { id: 3, imageLink: "/images/products/iphone12_02.jpg" },
-      { id: 4, imageLink: "/images/products/iphone12_03.jpg" },
-      { id: 5, imageLink: "/images/products/iphone12_04.jpg" },
+      { id: 1, imageLink: "/images/products/p40_01.jpg" },
+      { id: 3, imageLink: "/images/products/p40_02.jpg" },
+      { id: 4, imageLink: "/images/products/p40_03.jpg" },
+      { id: 5, imageLink: "/images/products/p40_04.jpg" },
+      { id: 6, imageLink: "/images/products/p40_05.jpg" },
+      { id: 7, imageLink: "/images/products/p40_06.jpg" },
   ],
   }, 
   {
@@ -116,6 +119,7 @@ export const allProducts = [
       { id: 3, imageLink: "/images/products/oneplus9_02.jpg" },
       { id: 4, imageLink: "/images/products/oneplus9_03.jpg" },
       { id: 5, imageLink: "/images/products/oneplus9_04.jpg" },
+      { id: 5, imageLink: "/images/products/oneplus9_05.jpg" }
   ],
   },
 ];

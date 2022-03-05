@@ -100,7 +100,6 @@ const LinkComp = styled(Link)`
                    <TiStarFullOutline style={{color:'#FFEB00'}} size={25}/>
                    <TiStarHalfOutline style={{color:'#FFEB00'}} size={25}/>
                    <TiStarOutline style={{color:'#FFEB00'}} size={25}/>
-
                 </StarDiv>
                 <Text className='text-center mt-2' bold>
                 <Strike>${oldPrice}</Strike> {" "} {newPrice}$

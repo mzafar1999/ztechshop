@@ -8,11 +8,12 @@ const productsSLice = createSlice({
         currentProduct:{},
         filteredProducts:[]
     },reducers:{
-        selectCurretCar : (state,action)=>{
+        selectCurretProduct : (state,action)=>{
             state.currentProduct = action.payload
-        }
+        },
+        
     }
 })
 
-export const {selectCurretCar} = productsSLice.actions
+export const {selectCurretProduct,getSingleProduct} = productsSLice.actions
 export default productsSLice.reducer

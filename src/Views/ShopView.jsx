@@ -67,7 +67,7 @@ const FiltersBox = styled.div``;
 const ShopView = () => {
 
   let allProducts = useSelector(state=>state.products.allProducts)
-  console.log(allProducts);
+
   return (
     <>
       <Navbar />

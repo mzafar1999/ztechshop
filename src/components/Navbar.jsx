@@ -15,16 +15,12 @@ box-shadow: -1px 8px 10px -4px #00000068;
 z-index: 100;
 `;
 const Left = styled.div`
-	/* flex: 1; */
 `;
 const Center = styled.div`
-	/* flex: 1; */
 `;
 const Right = styled.div`
-	/* flex: 1; */
 `;
 const ImageWrapper = styled.div`
-	height: 6rem;
 	width:15rem;
 	padding: 30px;
 ;`;

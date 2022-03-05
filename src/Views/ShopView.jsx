@@ -113,8 +113,8 @@ const ShopView = () => {
               <Row className="d-flex justify-content-between mb-4 ">
                 <GenderCatDiv className="d-flex">
                   <Title className=" mx-1">All</Title>
-                  <Title className=" mx-2">Men's</Title>
-                  <Title className=" mx-1">Women's</Title>
+                  <Title className=" mx-2">Entertainments</Title>
+                  <Title className=" mx-1">Smart Phones</Title>
                 </GenderCatDiv>
                 <SortBox>
                   <Select className="form-select w-100">

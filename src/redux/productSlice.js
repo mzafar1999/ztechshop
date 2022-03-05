@@ -12,9 +12,7 @@ const productsSLice = createSlice({
         selectCurretProduct : (state,action)=>{
             state.currentProduct = action.payload
         },
-        setRelatedProducts : (state,action)=>{
-            state.relatedProducts = action.payload
-        },
+        
         
     }
 })

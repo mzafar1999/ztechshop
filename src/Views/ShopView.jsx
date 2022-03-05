@@ -63,7 +63,7 @@ const CategoryBox = styled.div`
 const FiltersBox = styled.div``;
 
 const reletedProduct = [
-  { id: 1, img: "/images/r1.jpg", title: "Dell Inspiron", gpu: "i3/i5/i7" },
+  { id: 1, img: "/images/iphone12_thumb_optz.png", title: "iPhone 12", price:369 ,gpu: "i3/i5/i7" },
   { id: 2, img: "/images/r2.jpg", title: "Dell Inspiron", gpu: "i3/i5/i7" },
   { id: 3, img: "/images/r3.jpg", title: "Dell Inspiron", gpu: "i3/i5/i7" },
   { id: 4, img: "/images/r4.jpg", title: "Dell Inspiron", gpu: "i3/i5/i7" },

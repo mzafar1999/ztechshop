@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import {TiStarFullOutline,TiStarHalfOutline,TiStarOutline} from 'react-icons/ti'
+import ReactStars from "react-rating-stars-component";
 import '../App.css'
 const Text = styled.p`
     font-size: ${props=>props.medium && '14px'};
@@ -76,9 +76,10 @@ const LinkComp = styled(Link)`
         color:#05ac4a
     }
 `
-    const CardComp = ({id,images,thumbnail,name,price,gpu}) => {
+    const CardComp = ({id,images,thumbnail,name,price,gpu,rating}) => {
     let oldPrice = price;
     let newPrice = parseInt(Math.round(price - (oldPrice * 0.2)))
+    
     return (
     <Card className='card mx-2 mb-5 shadow-sm p-1 d-flex flex-column justify-content-around'>
                 <LinkComp to={`/product/${id}`}>
@@ -94,12 +95,9 @@ const LinkComp = styled(Link)`
                 <Text className='text-center mt-2 mb-2'>
                     {gpu}
                 </Text>
-                <StarDiv className='text-center'>
-                   <TiStarFullOutline style={{color:'#FFEB00'}} size={25}/>
-                   <TiStarFullOutline style={{color:'#FFEB00'}} size={25}/>
-                   <TiStarFullOutline style={{color:'#FFEB00'}} size={25}/>
-                   <TiStarHalfOutline style={{color:'#FFEB00'}} size={25}/>
-                   <TiStarOutline style={{color:'#FFEB00'}} size={25}/>
+                <StarDiv className='text-center d-flex align-items-center justify-content-center'>
+                <ReactStars  edit={false} size='30' value={rating} />
+
                 </StarDiv>
                 <Text className='text-center mt-2' bold>
                 <Strike>${oldPrice}</Strike> {" "} {newPrice}$

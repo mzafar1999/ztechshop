@@ -1,16 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import CardComp from "../components/CardComp";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
 import {useSelector} from 'react-redux'
-
+import ReactStars from "react-rating-stars-component";
+import { render } from "react-dom";
 export const ContainerFluid = styled.section``;
 export const Container = styled.section``;
 export const Row = styled.div``;
 export const Col = styled.div``;
 export const TitleWrapper = styled.div``;
+
 export const Title = styled.p`
+
   font-size: ${(props) => (props.big ? "30px" : "22px")};
   font-size: ${(props) => (props.subheading ? "15px" : "22px")};
 
@@ -67,7 +68,7 @@ const FiltersBox = styled.div``;
 const ShopView = () => {
 
   let allProducts = useSelector(state=>state.products.allProducts)
-
+ 
   return (
     <>
       <ContainerFluid className="container-fluid">
@@ -83,6 +84,7 @@ const ShopView = () => {
                 <Title> Laptop </Title>
                 <Title> Console </Title>
                 <Title> TV </Title>
+
               </CategoryBox>
               <FiltersBox className="border p-3 mt-4">
                 <Heading className="border py-2 text-center">Filters</Heading>

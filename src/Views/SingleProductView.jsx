@@ -4,12 +4,11 @@ import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import CarouselComp from '../components/CarouselComp'
 import { Button, Col, Container, Row } from '../components/Categories'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
 import RelatedProducts from '../components/RelatedProducts'
 import {  selectCurretProduct } from '../redux/productSlice'
 
 import {TiStarFullOutline,TiStarHalfOutline,TiStarOutline} from 'react-icons/ti'
+import ReactStars from 'react-rating-stars-component'
 
 
 const ContainerSmall = styled.div`
@@ -62,12 +61,9 @@ const SingleProductView = () => {
             <Title className='h3'> $ {newPrice} </Title>
             
             <StarDiv className='mb-3'>
-                   <TiStarFullOutline style={{color:'#FFEB00'}} size={25}/>
-                   <TiStarFullOutline style={{color:'#FFEB00'}} size={25}/>
-                   <TiStarFullOutline style={{color:'#FFEB00'}} size={25}/>
-                   <TiStarHalfOutline style={{color:'#FFEB00'}} size={25}/>
-                   <TiStarOutline style={{color:'#FFEB00'}} size={25}/>
-                </StarDiv> Rating 4.8 | 36 Comments
+            <ReactStars  edit={false} size='30' value={currentProduct.rating} />
+
+                </StarDiv> Rating {currentProduct.rating} | 36 Comments
             <strong>Brand</strong> : <Text className='d-inline text-capitalize'>{currentProduct.brand}</Text>
             <Box>
               <Title className='h2'>Description</Title>

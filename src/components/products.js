@@ -23,6 +23,7 @@ export const allProducts = [
         { id: 4, imageLink: "/images/products/iphone12_03.jpg" },
         { id: 5, imageLink: "/images/products/iphone12_04.jpg" },
     ],
+    rating:5
   },
 
   {
@@ -49,6 +50,8 @@ export const allProducts = [
       { id: 6, imageLink: "/images/products/s10_05.jpg" },
       { id: 6, imageLink: "/images/products/s10_06.jpg" },
   ],
+  rating:3
+
   },
   {
     id: 3,
@@ -71,7 +74,8 @@ export const allProducts = [
       { id: 3, imageLink: "/images/products/note10_02.jpg" },
       { id: 4, imageLink: "/images/products/note10_03.jpg" },
       { id: 5, imageLink: "/images/products/note10_04.jpg" },
-  ],
+  ],    rating:4
+
   },
   {
     id: 4,
@@ -96,7 +100,8 @@ export const allProducts = [
       { id: 5, imageLink: "/images/products/p40_04.jpg" },
       { id: 6, imageLink: "/images/products/p40_05.jpg" },
       { id: 7, imageLink: "/images/products/p40_06.jpg" },
-  ],
+  ],    rating:5
+
   }, 
   {
     id: 5,
@@ -120,6 +125,7 @@ export const allProducts = [
       { id: 4, imageLink: "/images/products/oneplus9_03.jpg" },
       { id: 5, imageLink: "/images/products/oneplus9_04.jpg" },
       { id: 5, imageLink: "/images/products/oneplus9_05.jpg" }
-  ],
+  ],    rating:4
+
   },
 ];

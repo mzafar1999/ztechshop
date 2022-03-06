@@ -7,10 +7,13 @@ import SingleProductView from './Views/SingleProductView';
 import ShopView from './Views/ShopView';
 import CartView from './Views/CartView';
 import './App.css';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 function App() {
   return (
     <Router>
       <TopNav/>
+      <Navbar/>
       <Switch>
         <Route exact path={`/`}>
           <Home></Home>
@@ -25,6 +28,7 @@ function App() {
           <CartView></CartView>
         </Route>
       </Switch>
+      <Footer/>
     </Router>
   );
 }

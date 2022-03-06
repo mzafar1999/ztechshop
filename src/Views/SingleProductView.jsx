@@ -51,8 +51,7 @@ const SingleProductView = () => {
     let newPrice = parseInt(Math.round(currentProduct.price - (oldPrice * 0.2)))
     return (
     <Container style={{backgroundColor:'#eeeded'}}>
-       <Navbar/>
-        <ContainerSmall className='container mb-5 mt-5' >
+          <ContainerSmall className='container mb-5 mt-5' >
         <Row className='row'>
           <Col className='col-lg-5 col-md-5' >
             <CarouselComp images={imagesOfProduct}/>
@@ -99,7 +98,6 @@ const SingleProductView = () => {
         </Row>
         </ContainerSmall>
         <RelatedProducts/>
-       <Footer/>
     </Container>
   )
 }

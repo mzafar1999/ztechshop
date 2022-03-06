@@ -70,7 +70,6 @@ const ShopView = () => {
 
   return (
     <>
-      <Navbar />
       <ContainerFluid className="container-fluid">
         <Container className="container pt-3">
           <Row className="row d-flex align-items-baseline">
@@ -148,7 +147,6 @@ const ShopView = () => {
           </Row>
         </Container>
       </ContainerFluid>
-      <Footer />
     </>
   );
 };

@@ -138,13 +138,10 @@ const Footer = () => {
 			<Container className="w-100 bg-black py-3">
 				<Container className="container">
 					<Row className="row">
-						<Col className="col-12 d-flex">
-							<SubTitle>Copyright © 2022 Z-Tech | Designed by</SubTitle>
-							<NavLink className="mx-2 text-bold" to="https://templatemo.com/">
-								<strong>TempleteMo,</strong>
-							</NavLink>
-                            <SubTitle>
-                            coded by M.Zafar with ReactJS
+						<Col className="col-12 d-flex justify-content-center">
+							
+                            <SubTitle className='text-center'>
+                            Developed by M.Zafar with MERN Stack
                             </SubTitle>   
                             <ALink className='mx-2' target='_blank' href='http://github.com/mzafar1999'>
                                 <FaGithub size={25}/>

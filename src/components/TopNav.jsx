@@ -22,6 +22,9 @@ const Social = styled.div`
 	display: flex;
 	align-items: center;
 	margin-right: 10px;
+	@media (max-width:786px) {
+		display: ${props=>props.none?'none':null} ;
+	}
 `;
 
 const TopNav = () => {
@@ -33,7 +36,7 @@ const TopNav = () => {
 						<AiOutlineMail />
 						<Text className="mx-2">z-tech@gmail.com</Text>
 					</Social>
-					<Social style={{ color: 'white' }}>
+					<Social none style={{ color: 'white' }}>
 						<AiFillPhone />
 						<Text className="mx-2">0304 943 6671</Text>
 					</Social>

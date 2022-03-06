@@ -16,11 +16,9 @@ export const Container = styled.div`
 const Home = () => {
   return (
     <Container>
-     <Navbar/>
      <Slider/>
      <Categories/>
      <Featured/>
-     <Footer/>
     </Container>
   )
 }

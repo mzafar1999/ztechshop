@@ -103,7 +103,6 @@ const Input = styled.input`
 const CartView = () => {
   return (
     <>
-      <Navbar />
       <ContainerFuild className="container-fluid">
         <Container className="">
           <Row className="row">

@@ -9,6 +9,7 @@ import CartView from './Views/CartView';
 import './App.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import SignUp from './components/Forms/SignUp';
 function App() {
   return (
     <Router>
@@ -26,6 +27,9 @@ function App() {
         </Route>
         <Route path={`/cart`}>
           <CartView></CartView>
+        </Route>
+        <Route path={`/sign-up`}>
+          <SignUp></SignUp>
         </Route>
       </Switch>
       <Footer/>

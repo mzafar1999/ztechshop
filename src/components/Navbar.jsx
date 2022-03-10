@@ -55,20 +55,26 @@ const NavLink = styled(Link)`
   color: black;
 `;
 
+const Box2 = styled.div`
+  position:absolute;
+  display:none;
+`
 const ReactIconWrapper = styled.div`
   margin: 0 10px;
   padding: 5px;
   cursor: pointer;
+  &:hover ${Box2}{
+    display:block ;
+  }
 `;
 
 const Box = styled.div`
 	cursor: pointer;
-
 	@media (min-width:960px) {
 	display:none ;
 }
 `;
-
+const Text = styled.p``
 const Navbar = () => {
   const [smallScreen, setSmallScreen] = useState(false);
   let width;
@@ -130,13 +136,13 @@ const Navbar = () => {
               <NavLink to="/">Home</NavLink>
             </LinkWrapper>
             <LinkWrapper>
-              <NavLink to="/product/:id">Item</NavLink>
-            </LinkWrapper>
-            <LinkWrapper>
               <NavLink to="/shop">Shop</NavLink>
             </LinkWrapper>
             <LinkWrapper>
-              <NavLink to="/cart">Contact</NavLink>
+              <NavLink to="/about-us">About Us</NavLink>
+            </LinkWrapper>
+            <LinkWrapper>
+              <NavLink to="/contact">Contact</NavLink>
             </LinkWrapper>
           </Center>
           <Right className={'d-block d-flex mb-3 px-3 '}>
@@ -147,7 +153,13 @@ const Navbar = () => {
               <FaOpencart />
             </ReactIconWrapper>
             <ReactIconWrapper>
+              <NavLink to='/sign-up'>
               <MdAccountCircle />
+               
+              </NavLink>
+              <Box2>
+                  <Text className="text-success">Sign-Up</Text>
+                </Box2>
             </ReactIconWrapper>
         </Right>
       </Container>}

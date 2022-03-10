@@ -209,7 +209,6 @@ const CartView = () => {
           </Row>
         </Container>
       </ContainerFuild>
-      <Footer />
     </>
   );
 };

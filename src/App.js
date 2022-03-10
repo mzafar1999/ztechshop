@@ -11,7 +11,11 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import SignUp from './components/Forms/SignUp';
 import SignIn from './components/Forms/SignIn';
+import Contact from './components/Forms/Contact';
 function App() {
+
+  
+
   return (
     <Router>
       <TopNav/>
@@ -34,6 +38,9 @@ function App() {
         </Route>
         <Route path={`/sign-in`}>
           <SignIn></SignIn>
+        </Route>
+        <Route path={`/contact`}>
+          <Contact></Contact>
         </Route>
       </Switch>
       <Footer/>

@@ -71,6 +71,8 @@ const SignUp = () => {
 
   return (
     <Container className="p-5">
+              <h1 className="text-center mb-4">Sign Up</h1>
+
         <Box className="register-form">
       <Form onSubmit={formik.handleSubmit}>
         <Box className="form-group">

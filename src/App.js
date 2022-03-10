@@ -10,6 +10,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import SignUp from './components/Forms/SignUp';
+import SignIn from './components/Forms/SignIn';
 function App() {
   return (
     <Router>
@@ -30,6 +31,9 @@ function App() {
         </Route>
         <Route path={`/sign-up`}>
           <SignUp></SignUp>
+        </Route>
+        <Route path={`/sign-in`}>
+          <SignIn></SignIn>
         </Route>
       </Switch>
       <Footer/>

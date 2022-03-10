@@ -1,31 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 import { catagroydata } from './categoriesdata'
+import { Container,Row,Col,TitleWrapper,Title,SubTitle,CardWrapper,ImageWrapper,Button } from './styledComponents'
 
 
-export const Container = styled.section`
-`
-export const Row = styled.div`
-    
-`
-export const Col = styled.div`
-`
-export const TitleWrapper = styled.div``
-export const Title = styled.h1``
-export const SubTitle = styled.p``
-export const CardWrapper = styled.div`
-    
-`
-export const ImageWrapper = styled.div``
+
+
 export const Image = styled.img`
     width: 100%;
     height: 100%;
     border-radius: 50%;
     border: 1px solid #cccccc;
 `
-export const Button = styled.button`
-    
-`
+
 const Categories = () => {
   return (
     <Container className='container py-5'>
@@ -36,8 +23,8 @@ const Categories = () => {
             </TitleWrapper>
         </Row>
         <Row className='row'>
-            {catagroydata.map((cat) => {
-                return (<Col className=' d-flex column align-items-center col-md-4 col-12 p-5'>
+            {catagroydata.map((cat,i) => {
+                return (<Col key={i} className=' d-flex column align-items-center col-md-4 col-12 p-5'>
                     <CardWrapper>
                         <ImageWrapper>
                             <Image src={cat.img} />

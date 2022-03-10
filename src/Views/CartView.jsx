@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Button, Row } from "../components/Categories";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import { Button, Row } from "../components/styledComponents";
+
 const ContainerFuild = styled.div`
   background-color: #a8a8a8;
   height: 100%;
@@ -76,7 +75,6 @@ const Select = styled.select`
   background-color: rgb(247, 247, 247);
 `;
 const Option = styled.option``;
-const Text = styled.p``;
 const ImageWrapper = styled.div`
   height: 110px;
 `;

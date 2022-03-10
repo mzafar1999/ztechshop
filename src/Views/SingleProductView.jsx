@@ -3,30 +3,16 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import CarouselComp from '../components/CarouselComp'
-import { Button, Col, Container, Row } from '../components/Categories'
+import { Button, Col, Container, Row } from '../components/styledComponents'
 import RelatedProducts from '../components/RelatedProducts'
 import {  selectCurretProduct } from '../redux/productSlice'
-
-import {TiStarFullOutline,TiStarHalfOutline,TiStarOutline} from 'react-icons/ti'
 import ReactStars from 'react-rating-stars-component'
-
+import { Title,Text,Box,StarDiv } from '../components/styledComponents'
 
 const ContainerSmall = styled.div`
   
 `
 
-const Title = styled.h1`
-  
-`
-const Text = styled.p`
-  
-`
-const Box = styled.div`
-  
-`
-const StarDiv = styled.div`
-  
-`
 const SingleProductView = () => {
     const allProducts = useSelector(state=>state.products.allProducts)
     const location = useLocation()
@@ -40,7 +26,7 @@ const SingleProductView = () => {
         return product.id===productId
       })
       dispatch(selectCurretProduct(product))
-    }, [dispatch])
+    }, [dispatch,productId,allProducts])
     
     //My Product Info
     let currentProduct = useSelector(state=>state.products.currentProduct)

@@ -3,8 +3,8 @@ import { MdEmail, MdLocationOn } from 'react-icons/md';
 import { AiFillPhone } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { FaFacebook, FaFacebookF, FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
-
+import { FaFacebookF, FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { Row,Col } from './styledComponents';
 const FooterDiv = styled.div``;
 
 const Container = styled.div``;
@@ -13,8 +13,7 @@ const NavLink = styled(Link)`
     color: white;
     
 `;
-const Row = styled.div``;
-const Col = styled.div``;
+
 const Title = styled.h2`
 	color: white;
 	border-bottom: 1px solid #2d343f;
@@ -81,36 +80,31 @@ const Footer = () => {
 					<Col className="col-md-4 pt-5">
 						<Title className=" pb-3 logo">Z-Shop</Title>
 						<TextAndIconWrapper className="my-2">
-							{' '}
 							<MdLocationOn />212 Hayatabad-Peshawar, 25100
 						</TextAndIconWrapper>
 						<TextAndIconWrapper className="my-2">
-							{' '}
-							<AiFillPhone /> <NavLink> 091-502120</NavLink>{' '}
+							<AiFillPhone /> <NavLink to={`/`}> 091-502120</NavLink>{' '}
 						</TextAndIconWrapper>
 						<TextAndIconWrapper className="my-2">
-							{' '}
-							<MdEmail /> <NavLink>z-tech@gmail.com </NavLink>{' '}
+							<MdEmail /> <NavLink to={`/`}>z-tech@gmail.com </NavLink>{' '}
 						</TextAndIconWrapper>
 					</Col>
 					<Col className="col-md-4 pt-5">
 						<Title className=" pb-3 logo">Products</Title>
-						{productsLinks.map((item) => {
+						{productsLinks.map((item,i) => {
 							return (
-								<TextAndIconWrapper className="my-2">
-									{' '}
-									<NavLink>{item}</NavLink>{' '}
+								<TextAndIconWrapper key={i} className="my-2">
+									<NavLink to={`/`}>{item}</NavLink>
 								</TextAndIconWrapper>
 							);
 						})}
 					</Col>
 					<Col className="col-md-4 pt-5">
 						<Title className=" pb-3 logo">Further Info</Title>
-						{furtherInfoLinks.map((item) => {
+						{furtherInfoLinks.map((item,i) => {
 							return (
-								<TextAndIconWrapper className="my-2">
-									{' '}
-									<NavLink>{item}</NavLink>{' '}
+								<TextAndIconWrapper key={i} className="my-2">
+									<NavLink to={`/`}>{item}</NavLink>
 								</TextAndIconWrapper>
 							);
 						})}
@@ -121,9 +115,9 @@ const Footer = () => {
 						<Line className="" />
 					</Col>
 					<Col className="col-auto me-auto mt-2 d-flex">
-						{socialIcons.map((social) => {
+						{socialIcons.map((social,i) => {
 							return (
-								<SocialIconWrapper className="mx-3" key={social.id}>
+								<SocialIconWrapper key={i} className="mx-3">
 									<NavLink to={social.link}>{social.icon}</NavLink>
 								</SocialIconWrapper>
 							);
@@ -143,7 +137,7 @@ const Footer = () => {
                             <SubTitle className='text-center'>
                             Developed by M.Zafar with MERN Stack
                             </SubTitle>   
-                            <ALink className='mx-2' target='_blank' href='http://github.com/mzafar1999'>
+                            <ALink className='mx-2' target='_blank'  href='http://github.com/mzafar1999'>
                                 <FaGithub size={25}/>
                             </ALink>                            
 						</Col>

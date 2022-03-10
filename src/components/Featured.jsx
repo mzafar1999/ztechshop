@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import {  TitleWrapper,Title,SubTitle, Col } from './Categories'
+import {  TitleWrapper,Title,SubTitle, Col } from './styledComponents'
 import { featureddata } from './featureddata'
+import { StarDiv } from './styledComponents'
 
 
 const Container = styled.div`
     background-color: #e9eef5;
-    
 `
 
 const CardWrapper = styled.div`
@@ -30,9 +30,6 @@ const Row = styled.div`
 const DetailsWrapper = styled.div`
     min-height: 300px;
 `
-const StarsWrapper = styled.div`
-    
-`
 const NavLink = styled(Link)`
     text-decoration: none;
     color: black;
@@ -52,19 +49,19 @@ const Featured = () => {
                 </TitleWrapper>
             </Row>
             <Row className='row'>
-                {featureddata.map((item) => {
-                    return (<Container className=' d-flex column align-items-center col-md-4 col-12 my-3 '>
+                {featureddata.map((item,i) => {
+                    return (<Container key={i} className=' d-flex column align-items-center col-md-4 col-12 my-3 '>
                         <CardWrapper>
                             <ImageWrapper>
-                                <NavLink><Image src={item.img} /></NavLink>
+                                <NavLink to={`/`}><Image src={item.img} /></NavLink>
                             </ImageWrapper>
                            <Row>
                            <Row className='d-flex justify-content-between px-3'>
-                                <StarsWrapper className=''>*****</StarsWrapper>
+                                <StarDiv className=''>*****</StarDiv>
                                 <Col className=''>{item.price}$</Col>
                             </Row>
                             <DetailsWrapper className='p-3 d-flex flex-column justify-content-around'>
-                                <Title> <NavLink> {item.title} </NavLink> </Title>
+                                <Title> <NavLink to={`/`}> {item.title} </NavLink> </Title>
                                 <Description> 
                                     {item.desc}
                                 </Description>

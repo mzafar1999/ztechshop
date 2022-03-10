@@ -3,12 +3,11 @@ import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { AiOutlineMail, AiFillPhone } from 'react-icons/ai';
 import { GrFacebook, GrInstagram, GrTwitter, GrLinkedin } from 'react-icons/gr';
-
+import { Container } from './styledComponents';
 const Wrapper = styled.div`
 	background-color: #212934;
 	height: 45px;
 `;
-const Container = styled.div``;
 const ContactWrapper = styled.div``;
 const Text = styled.p`
 	color: white;

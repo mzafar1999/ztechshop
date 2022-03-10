@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { BiSearch } from "react-icons/bi";
 import { FaOpencart } from "react-icons/fa";
 import { MdAccountCircle } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { NavLink } from "./styledComponents";
 const Container = styled.div`
   height: ${(props) => props.large && "90px"};
   width: 100%;
@@ -50,13 +50,7 @@ const LinkWrapper = styled.div`
   margin: 0 20px;
   padding: 10px;
 `;
-const NavLink = styled(Link)`
-  text-decoration: none;
-  color: black;
-  &:hover{
-    text-decoration: none;
-  }
-`;
+
 
 const AccountBox = styled.div`
   position:absolute;

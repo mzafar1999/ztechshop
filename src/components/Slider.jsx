@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { sliderdata } from './sliderdata';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
+import { SubTitle, Text, Title } from './styledComponents';
 const Container = styled.div`
     background-color: #EFEFEF;
 `;
@@ -33,9 +34,7 @@ const Image = styled.img`
        width: 100%; 
     }
 `;
-const Title = styled.h1``;
-const SubTitle = styled.h3``;
-const Description = styled.p``;
+
 
 const handleDragStart = (e) => e.preventDefault();
 
@@ -50,7 +49,7 @@ const Slider = () => {
 							<ColumnLeft className="col-md-6 col-lg-6">
 								<Title> {item.title} </Title>
 								<SubTitle> {item.subtitle} </SubTitle>
-								<Description> {item.desc} </Description>
+								<Text> {item.desc} </Text>
 							</ColumnLeft>
 							<ColumnRight className="col-md-6 col-lg-6">
 								<Image src={item.img} onDragStart={handleDragStart} />

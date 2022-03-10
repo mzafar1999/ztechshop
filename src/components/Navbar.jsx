@@ -161,7 +161,9 @@ const Navbar = () => {
               <BiSearch />
             </ReactIconWrapper>
             <ReactIconWrapper>
+              <NavLink to='/cart'>
               <FaOpencart />
+              </NavLink>
             </ReactIconWrapper>
             <ReactIconWrapper>
               <MdAccountCircle />

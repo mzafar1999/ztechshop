@@ -53,17 +53,26 @@ const LinkWrapper = styled.div`
 const NavLink = styled(Link)`
   text-decoration: none;
   color: black;
+  &:hover{
+    text-decoration: none;
+  }
 `;
 
-const Box2 = styled.div`
+const AccountBox = styled.div`
   position:absolute;
   display:none;
+  width: 100px;
+  height:80px;
+  border:1px solid gray ;
+  border-radius:10px ;
+  background-color:white ;
+  z-index:1000 ;
 `
 const ReactIconWrapper = styled.div`
   margin: 0 10px;
   padding: 5px;
   cursor: pointer;
-  &:hover ${Box2}{
+  &:hover ${AccountBox}{
     display:block ;
   }
 `;
@@ -74,7 +83,9 @@ const Box = styled.div`
 	display:none ;
 }
 `;
-const Text = styled.p``
+const Text = styled.p`
+  margin: 10px;
+`
 const Navbar = () => {
   const [smallScreen, setSmallScreen] = useState(false);
   let width;
@@ -153,13 +164,15 @@ const Navbar = () => {
               <FaOpencart />
             </ReactIconWrapper>
             <ReactIconWrapper>
-              <NavLink to='/sign-up'>
               <MdAccountCircle />
-               
-              </NavLink>
-              <Box2>
-                  <Text className="text-success">Sign-Up</Text>
-                </Box2>
+              <AccountBox>
+                <NavLink to='/sign-up'>
+                <Text>Sign-Up</Text>
+                </NavLink>
+                <NavLink to='/sign-in'>
+                <Text >Sign-In</Text>
+                </NavLink>
+                </AccountBox>
             </ReactIconWrapper>
         </Right>
       </Container>}

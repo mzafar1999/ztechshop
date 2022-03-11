@@ -104,17 +104,17 @@ const Navbar = () => {
 		</Box>
         </Left>
           <Center className={showNav?'d-flex':'d-none'}>
-            <LinkWrapper>
+          <LinkWrapper>
               <NavLink to="/">Home</NavLink>
-            </LinkWrapper>
-            <LinkWrapper>
-              <NavLink to="/product/:id">Item</NavLink>
             </LinkWrapper>
             <LinkWrapper>
               <NavLink to="/shop">Shop</NavLink>
             </LinkWrapper>
             <LinkWrapper>
-              <NavLink to="/cart">Contact</NavLink>
+              <NavLink to="/about-us">About Us</NavLink>
+            </LinkWrapper>
+            <LinkWrapper>
+              <NavLink to="/contact">Contact</NavLink>
             </LinkWrapper>
           </Center>
           <Right className={showNav?'d-block d-flex mb-3 px-3 ':'d-none'}>

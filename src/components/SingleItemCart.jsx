@@ -25,9 +25,9 @@ const SingleItemCart = ({name,model_name,price,images}) => {
         <Image src={images[0].imageLink}></Image>
       </ImageWrapper>
       <Box>
-        <Title className="mx-4 h4 text-capitalize" small noPadding noBorder>
+        {/* <Title className="mx-4 h4 text-capitalize" small noPadding noBorder>
           {model_name}
-        </Title>
+        </Title> */}
         <Title className="h6 mx-4 text-capitalize" noPadding noBorder>
           {name}
         </Title>

@@ -1,6 +1,8 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
-import { Button, Row } from "../components/styledComponents";
+import SingleItemCart from "../components/SingleItemCart";
+import { Box, Button, NavLink, Row } from "../components/styledComponents";
 
 const ContainerFuild = styled.div`
   background-color: #a8a8a8;
@@ -16,14 +18,14 @@ const ContainerFuild = styled.div`
 
 const CheckOutBtn = styled.button`
   background-color: #000;
-    border-color: #000;
-    color: white;
-    width: 100%;
-    font-size: 16px;
-    margin-top: 4vh;
-    padding: 1vh;
-    border-radius: 0
-`
+  border-color: #000;
+  color: white;
+  width: 100%;
+  font-size: 16px;
+  margin-top: 4vh;
+  padding: 1vh;
+  border-radius: 0;
+`;
 
 const Col = styled.div`
   border-top-right-radius: ${(props) => props.summery && "16px"};
@@ -75,19 +77,7 @@ const Select = styled.select`
   background-color: rgb(247, 247, 247);
 `;
 const Option = styled.option``;
-const ImageWrapper = styled.div`
-  height: 110px;
-`;
-const Box = styled.div``;
-const Card = styled.div`
-  height: 120px;
-  width: 100%;
-`;
-const Image = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-`;
+
 
 const Input = styled.input`
   border: 1px solid rgba(0, 0, 0, 0.137);
@@ -99,6 +89,9 @@ const Input = styled.input`
 `;
 
 const CartView = () => {
+
+  const cartProducts = useSelector(state=>state.cart.products)
+
   return (
     <>
       <ContainerFuild className="container-fluid">
@@ -106,63 +99,18 @@ const CartView = () => {
           <Row className="row">
             <Col className="col-md-8" items>
               <Title className="h3 mt-2 py-3">Shopping Cart</Title>
-              <Card className="d-flex border-bottom align-items-center justify-content-between">
-                <Box className="d-flex align-items-center ">
-                  <ImageWrapper>
-                    <Image src="https://i.imgur.com/1GrakTl.jpg"></Image>
-                  </ImageWrapper>
-                  <Box>
-                    <Title className="mx-4" small noPadding noBorder>
-                      Shirt
-                    </Title>
-                    <Title className="h5 mx-4" noPadding noBorder>
-                      Cotton T-shirt
-                    </Title>
-                  </Box>
-                </Box>
-
-                <Box className="d-flex align-items-baseline justify-content-center">
-                  <Button className="btn btn-light">-</Button>
-                  <Title className="h5 mx-2" noBorder>
-                    2
-                  </Title>
-                  <Button className="btn btn-light">+</Button>
-                </Box>
-                <Box>
-                  <Title className="h5" noBorder>
-                    $44.00
-                  </Title>
-                </Box>
-              </Card>
-              <Card className="d-flex border-bottom align-items-center justify-content-between">
-                <Box className="d-flex align-items-center ">
-                  <ImageWrapper>
-                    <Image src="https://i.imgur.com/1GrakTl.jpg"></Image>
-                  </ImageWrapper>
-                  <Box>
-                    <Title className="mx-4" small noPadding noBorder>
-                      Shirt
-                    </Title>
-                    <Title className="h5 mx-4" noPadding noBorder>
-                      Cotton T-shirt
-                    </Title>
-                  </Box>
-                </Box>
-
-                <Box className="d-flex align-items-baseline justify-content-center">
-                  <Button className="btn btn-light">-</Button>
-                  <Title className="h5 mx-2" noBorder>
-                    2
-                  </Title>
-                  <Button className="btn btn-light">+</Button>
-                </Box>
-                <Box>
-                  <Title className="h5" noBorder>
-                    $44.00
-                  </Title>
-                </Box>
-              </Card>
-              <Button className="btn btn-light my-3">Back to shop</Button>
+            
+              {
+                cartProducts.length===0? 'no item': cartProducts.map((item,i)=>{
+                  
+                  return (<SingleItemCart key={i}  {...item} />)
+                })
+              }            
+              <Button className="btn btn-light my-3">
+                <NavLink to={'/shop'}>
+                Back to shop
+                </NavLink>
+              </Button>
             </Col>
             <Col className="col-md-4 p-4" summery>
               <Title className="h3 mt-4" summery>

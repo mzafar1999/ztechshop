@@ -4,10 +4,12 @@ import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import CarouselComp from '../components/CarouselComp'
 import { Button, Col, Container, Row } from '../components/styledComponents'
+
 import RelatedProducts from '../components/RelatedProducts'
 import {  selectCurretProduct } from '../redux/productSlice'
 import ReactStars from 'react-rating-stars-component'
 import { Title,Text,Box,StarDiv } from '../components/styledComponents'
+import { addProduct } from '../redux/cartSlice'
 
 const ContainerSmall = styled.div`
   
@@ -31,9 +33,14 @@ const SingleProductView = () => {
     //My Product Info
     let currentProduct = useSelector(state=>state.products.currentProduct)
     let imagesOfProduct = currentProduct?currentProduct.images : null
-
     let oldPrice = currentProduct.price;
     let newPrice = parseInt(Math.round(currentProduct.price - (oldPrice * 0.2)))
+
+//Add product to cart
+const addProductToCart = () => {
+  dispatch(addProduct({...currentProduct}))
+}
+
     return (
     <Container style={{backgroundColor:'#eeeded'}}>
           <ContainerSmall className='container mb-5 mt-5' >
@@ -74,7 +81,7 @@ const SingleProductView = () => {
             </div>
             <div>
               <Button className='btn btn-success mx-3 w-25'>Buy</Button>
-              <Button className='btn btn-success mx-3 w-25'>Add to Cart</Button>
+              <Button onClick={addProductToCart} className='btn btn-success mx-3 w-25'>Add to Cart</Button>
             </div>
           </Col>
         </Row>

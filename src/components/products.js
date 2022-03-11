@@ -2,7 +2,7 @@ export const allProducts = [
   {
     id: 1,
     name: "Apple iPhone 12, 128GB, White",
-    model_name: "iphone 12",
+    model_name: "iPhone 12",
     storage: 128,
     os: "IOS 14",
     category: "phone",
@@ -29,7 +29,7 @@ export const allProducts = [
   {
     id: 2,
     name: "Samsung Galaxy S10+, 512GB, Black",
-    model_name: "samsung galaxy s10+",
+    model_name: "galaxy s10+",
     storage: 512,
     os: "Android",
     category: "phone",
@@ -56,7 +56,7 @@ export const allProducts = [
   {
     id: 3,
     name: "Samsung Galaxy Note 10+, 256GB",
-    model_name: "samsung galaxy note 10+",
+    model_name: "note 10+",
     storage: 256,
     os: "Android",
     category: "phone",

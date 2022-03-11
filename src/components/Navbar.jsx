@@ -122,10 +122,20 @@ const Navbar = () => {
               <BiSearch />
             </ReactIconWrapper>
             <ReactIconWrapper>
+              <NavLink to='/cart'>
               <FaOpencart />
+              </NavLink>
             </ReactIconWrapper>
             <ReactIconWrapper>
               <MdAccountCircle />
+              <AccountBox>
+                <NavLink to='/sign-up'>
+                <Text>Sign-Up</Text>
+                </NavLink>
+                <NavLink to='/sign-in'>
+                <Text >Sign-In</Text>
+                </NavLink>
+                </AccountBox>
             </ReactIconWrapper>
         </Right>
       </Container>: 

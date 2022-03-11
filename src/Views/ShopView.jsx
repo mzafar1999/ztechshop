@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import CardComp from "../components/CardComp";
-import { useDispatch, useSelector } from "react-redux";
-import { addProduct } from "../redux/cartSlice";
 export const ContainerFluid = styled.section``;
 export const Container = styled.section``;
 export const Row = styled.div``;

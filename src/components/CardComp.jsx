@@ -5,6 +5,7 @@ import ReactStars from "react-rating-stars-component";
 import '../App.css'
 import { addProduct } from '../redux/cartSlice';
 import { useDispatch } from 'react-redux';
+import { GreenStyledButton } from './styledComponents';
 const Text = styled.p`
     font-size: ${props=>props.medium && '14px'};
     font-weight: ${props=>props.bold && 'bold'} ;
@@ -38,38 +39,7 @@ const Strike = styled.del`
     color: #cc3b3b;
     stroke:black ;
 `
-const AddToCartBtn = styled.button`
-    color: #08f26a;
-	font-size: 12px;
-	text-transform: uppercase;
-	font-weight: bold;
-	background: none;
-	border: 1px solid #08f26a;
-	padding: 10px 10px;
-	margin-top: 5px;
-	line-height: 16px;
-	border-radius: 20px;
-    width:200px ;
-    margin: 0 auto;
-    font-family: 'Open Sans', sans-serif;
-    @media (min-width:486px) {
-        width:130px ;
-    }
-    &:hover{
-        color: #ffffff;
-        background: #08f26a;
-        border: 1px solid #08f26a;
 
-    }&:active{
-        color: #ffffff;
-        background: #06c556;
-        border: 1px solid #08f26a;
-
-    }
-
-
-    
-`
 const LinkComp = styled(Link)`
     text-decoration:none ;
     color:#06d35b;
@@ -107,7 +77,7 @@ const LinkComp = styled(Link)`
                 <Text className='text-center mt-2' bold>
                 <Strike>${oldPrice}</Strike>  {newPrice}$
                 </Text>
-                <AddToCartBtn onClick={addProductToCart} className='mb-3'>add to cart</AddToCartBtn>
+                <GreenStyledButton onClick={addProductToCart} className='mb-3'>add to cart</GreenStyledButton>
             </Card>
   )
 }

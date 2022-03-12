@@ -36,6 +36,37 @@ export const Text = styled.p`
 `
 export const Label = styled.label`
 `
+
+export const GreenStyledButton = styled.button`
+    color: #08f26a;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: bold;
+	background: none;
+	border: 1px solid #08f26a;
+	padding: 10px 10px;
+	margin-top: 5px;
+	line-height: 16px;
+	border-radius: 20px;
+    width:200px ;
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+    @media (min-width:486px) {
+        width:130px ;
+    }
+    &:hover{
+        color: #ffffff;
+        background: #08f26a;
+        border: 1px solid #08f26a;
+
+    }&:active{
+        color: #ffffff;
+        background: #06c556;
+        border: 1px solid #08f26a;
+
+    }   
+`
+
 export const NavLink = styled(Link)`
   text-decoration: none;
   color: black;

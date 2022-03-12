@@ -11,6 +11,7 @@ const Text = styled.p`
     font-weight: ${props=>props.bold && 'bold'} ;
     font-family: 'Open Sans', sans-serif;
     color: #898e96;
+
 `
 const ImageWrapper = styled.div`
     display: flex;
@@ -45,7 +46,9 @@ const LinkComp = styled(Link)`
     color:#06d35b;
     font-size:16px ;
     &:hover{
-        color:#05ac4a
+        color:#05ac4a;
+        text-decoration:none ;
+
     }
 `
     const CardComp = ({id,images,thumbnail,name,price,model_name,rating}) => {

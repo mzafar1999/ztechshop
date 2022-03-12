@@ -7,6 +7,7 @@ import {
   Col,
   Container,
   GreenStyledButton,
+  NavLink,
   Row,
 } from "../components/styledComponents";
 
@@ -19,14 +20,14 @@ import { BiMinusCircle } from "react-icons/bi";
 import { MdOutlineAddCircleOutline } from "react-icons/md";
 const ContainerSmall = styled.div``;
 const BuyNowBox = styled.div`
-    display: flex;
+  display: flex;
 
-    @media (max-width:476px) {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-    }
+  @media (max-width: 476px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
 `;
 
 const SingleProductView = () => {
@@ -50,20 +51,22 @@ const SingleProductView = () => {
   let oldPrice = currentProduct.price;
   let newPrice = parseInt(Math.round(currentProduct.price - oldPrice * 0.2));
 
-  let lessDescription = currentProduct.description? currentProduct.description.substring(0,150) : null;
-  const [moreDescription, setMoreDescription] = useState(false)
-  let [qauntity, setQauntity] = useState(1)
+  let lessDescription = currentProduct.description
+    ? currentProduct.description.substring(0, 150)
+    : null;
+  const [moreDescription, setMoreDescription] = useState(false);
+  let [qauntity, setQauntity] = useState(1);
   //Add product to cart
   const addProductToCart = () => {
     dispatch(addProduct({ ...currentProduct }));
   };
-  const increaseQty = ()=>{
-      setQauntity(qauntity+=1)
-      console.log(qauntity);
-  }
+  const increaseQty = () => {
+    setQauntity((qauntity += 1));
+    console.log(qauntity);
+  };
   const decreaseQty = () => {
-    qauntity >0 && setQauntity(qauntity-=1)
-  }
+    qauntity > 0 && setQauntity((qauntity -= 1));
+  };
 
   return (
     <Container style={{ backgroundColor: "#eeeded" }}>
@@ -76,7 +79,7 @@ const SingleProductView = () => {
             className="col-lg-6 col-lg-5 mx-md-4"
             style={{ backgroundColor: "#ffffff" }}
           >
-            <Title > {currentProduct.name} </Title>
+            <Title> {currentProduct.name} </Title>
             <Text>
               <strong>Condition</strong> : {currentProduct.condition}{" "}
             </Text>
@@ -89,14 +92,24 @@ const SingleProductView = () => {
               />
             </StarDiv>
             Rating {currentProduct.rating} | 36 Comments
-            <Box><strong>Brand</strong> :
-            <Text className="d-inline text-capitalize">
-              {currentProduct.brand}
-            </Text>
+            <Box>
+              <strong>Brand</strong> :
+              <Text className="d-inline text-capitalize">
+                {currentProduct.brand}
+              </Text>
             </Box>
             <Box>
-              <Title className="h2" >Description</Title>
-              <Title className="h6">{moreDescription?currentProduct.description:lessDescription} <Text className="text-primary" role='button' onClick={()=>setMoreDescription(!moreDescription)}><u>{moreDescription?'See less':'Read More'}</u></Text> </Title>
+              <Title className="h2">Description</Title>
+              <Title className="h6">
+                {moreDescription ? currentProduct.description : lessDescription}{" "}
+                <Text
+                  className="text-primary"
+                  role="button"
+                  onClick={() => setMoreDescription(!moreDescription)}
+                >
+                  <u>{moreDescription ? "See less" : "Read More"}</u>
+                </Text>{" "}
+              </Title>
             </Box>
             <Box className="mb-3">
               <strong>Color </strong>:
@@ -145,22 +158,27 @@ const SingleProductView = () => {
                 <Box className="border px-3 py-1 border-success rounded font-weight-bold">
                   {qauntity}
                 </Box>
-                <BiMinusCircle onClick={decreaseQty} className="mx-2" size={30} role="button" />
+                <BiMinusCircle
+                  onClick={decreaseQty}
+                  className="mx-2"
+                  size={30}
+                  role="button"
+                />
               </Box>
             </BuyNowBox>
             <BuyNowBox className="my-3">
-             <Box className="my-1 mx-1">
-             <GreenStyledButton >
-                Buy
-              </GreenStyledButton>
-             </Box>
-             <Box className="my-1 mx-1">
-             <GreenStyledButton
-                onClick={addProductToCart}
-              >
-                Add to Cart
-              </GreenStyledButton>
-             </Box>
+              <NavLink btn to={`/cart`}>
+                <Box className="my-1 mx-1">
+                  <GreenStyledButton onClick={addProductToCart}>
+                    Buy Now
+                  </GreenStyledButton>
+                </Box>
+              </NavLink>
+              <Box className="my-1 mx-1">
+                <GreenStyledButton onClick={addProductToCart}>
+                  Add to Cart
+                </GreenStyledButton>
+              </Box>
             </BuyNowBox>
           </Col>
         </Row>

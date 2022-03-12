@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import SingleItemCart from "../components/SingleItemCart";
-import { Box, Button, NavLink, Row } from "../components/styledComponents";
+import { Box, Button, GreenStyledButton, NavLink, Row } from "../components/styledComponents";
 
 const ContainerFuild = styled.div`
   background-color: #a8a8a8;
@@ -16,16 +16,6 @@ const ContainerFuild = styled.div`
   }
 `;
 
-const CheckOutBtn = styled.button`
-  background-color: #000;
-  border-color: #000;
-  color: white;
-  width: 100%;
-  font-size: 16px;
-  margin-top: 4vh;
-  padding: 1vh;
-  border-radius: 0;
-`;
 
 const Col = styled.div`
   border-top-right-radius: ${(props) => props.summery && "16px"};
@@ -106,11 +96,13 @@ const CartView = () => {
                   return (<SingleItemCart key={i}  {...item} />)
                 })
               }            
-              <Button className="btn btn-light my-3">
+            <Box>
+            <Button className="btn btn-light my-3">
                 <NavLink to={'/shop'}>
                 Back to shop
                 </NavLink>
               </Button>
+            </Box>
             </Col>
             <Col className="col-md-4 p-4" summery>
               <Title className="h3 mt-4" summery>
@@ -150,7 +142,7 @@ const CartView = () => {
                   </Title>
                 </Box>
               </Box>
-              <CheckOutBtn className=" mt-5 mb-4">Checkout</CheckOutBtn>
+              <GreenStyledButton checkout className=" mt-5 mb-4 w-100">Checkout</GreenStyledButton>
             </Col>
           </Row>
         </Container>

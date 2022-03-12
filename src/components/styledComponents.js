@@ -38,11 +38,12 @@ export const Label = styled.label`
 `
 
 export const GreenStyledButton = styled.button`
-    color: #08f26a;
+    color: ${props=>props.checkout?'white':'#08f26a'} ;
+    font-weight: bold;
 	font-size: 12px;
 	text-transform: uppercase;
-	font-weight: bold;
-	background: none;
+	background: ${props=>props.checkout?'#08f26a':'white'} none;
+
 	border: 1px solid #08f26a;
 	padding: 10px 10px;
 	margin-top: 5px;
@@ -55,12 +56,12 @@ export const GreenStyledButton = styled.button`
         width:130px ;
     }
     &:hover{
-        color: #ffffff;
+        color: black;
         background: #08f26a;
         border: 1px solid #08f26a;
 
     }&:active{
-        color: #ffffff;
+        color: black;
         background: #06c556;
         border: 1px solid #08f26a;
 
@@ -69,9 +70,13 @@ export const GreenStyledButton = styled.button`
 
 export const NavLink = styled(Link)`
   text-decoration: none;
-  color: black;
+  color: #11855e;
+  font-weight: bold;
+  color:black;
   &:hover{
     text-decoration: none;
+    color:black;
+    
   }
 `;
 //Form

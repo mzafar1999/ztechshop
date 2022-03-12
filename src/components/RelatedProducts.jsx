@@ -1,26 +1,28 @@
 import { useSelector } from "react-redux";
 import styled from "styled-components";
-import { Container, Row,Title,Text,ImageWrapper,StarDiv } from "./styledComponents";
+import { Container, Row,Title,Text,ImageWrapper,StarDiv, Box } from "./styledComponents";
 import {TiStarFullOutline,TiStarHalfOutline,TiStarOutline} from 'react-icons/ti'
 
 const Card = styled.div`
   cursor: pointer;
+
+  @media (min-width:491px) {
+    min-height: 420px;
+  }
+
+  @media (max-width:490px) {
+    height: 320px;
+  }
 `;
 const Image = styled.img`
   width: 100%;
   height: 100%;
+  
 `;
 
 
 const Col = styled.div`
-  display:grid ;
-  grid-template-columns:repeat(4,1fr) ;
-  @media (max-width:786px) {
-    grid-template-columns:repeat(2,1fr) ;
-  }
-  @media (max-width:586px) {
-    grid-template-columns:repeat(1,1fr) ;
-  }
+ 
 `
 const RelatedProducts = () => {
   const allProducts = useSelector(state=>state.products.allProducts)
@@ -35,11 +37,11 @@ const RelatedProducts = () => {
             <Title className="h4 mt-5 mb-3 mx-3">Related Products</Title>
           </Col>
         </Row>
-        <Row className="">
-          <Col className="">
+        <Row className="row g-2">
             {relatedProducts.map((product,i) => {
               return (
-                <Card key={i} className="card mx-2 mb-5 shadow p-1">
+               <Box className="col-6 col-lg-3 mb-5 h-50">
+                  <Card key={i} className="p-3 shadow p-1">
                   <ImageWrapper>
                     <Image src={product.images[0].imageLink} />
                   </ImageWrapper>
@@ -54,9 +56,9 @@ const RelatedProducts = () => {
                 </StarDiv>
                   <Text className="text-center">{product.price-(product.price*0.2)}$</Text>
                 </Card>
+               </Box>
               );
             })}
-          </Col>
         </Row>
       </Container>
     </Container>

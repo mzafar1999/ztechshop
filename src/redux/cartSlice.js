@@ -10,8 +10,16 @@ const cartSlice = createSlice({
     reducers:
    {
     addProduct:(state,action)=>{
-        state.products.push(action.payload);
 
+        let exitsItem = state.products.find((product)=>{
+            return product.id===action.payload.id
+        })
+        if(!exitsItem){
+            state.products.push(action.payload);
+        }
+        else{
+        }
+        
     },
     qtyInc:(state,action)=>{
        let findProduct= state.products.find((product)=>{
@@ -32,7 +40,7 @@ const cartSlice = createSlice({
           })
         let totalPriceOfProducts = productPrices.reduce((p,c) => {
             return p+c
-          })
+          },0)
         state.totalPrice = totalPriceOfProducts
      }
 

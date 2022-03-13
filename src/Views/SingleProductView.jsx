@@ -79,12 +79,12 @@ const SingleProductView = () => {
             className="col-lg-6 col-lg-5 mx-md-4"
             style={{ backgroundColor: "#ffffff" }}
           >
-            <Title> {currentProduct.name} </Title>
+            <Title className="h2"> {currentProduct.name} </Title>
             <Text>
               <strong>Condition</strong> : {currentProduct.condition}{" "}
             </Text>
-            <Title className="h3"> $ {newPrice} </Title>
-            <StarDiv className="mb-3">
+            <Title className="h4"> $ {newPrice} </Title>
+            <StarDiv className="">
               <ReactStars
                 edit={false}
                 size={30}
@@ -99,7 +99,7 @@ const SingleProductView = () => {
               </Text>
             </Box>
             <Box>
-              <Title className="h2">Description</Title>
+              <Title className="h3">Description</Title>
               <Title className="h6">
                 {moreDescription ? currentProduct.description : lessDescription}{" "}
                 <Text
@@ -111,7 +111,7 @@ const SingleProductView = () => {
                 </Text>{" "}
               </Title>
             </Box>
-            <Box className="mb-3">
+            <Box className="mb-1">
               <strong>Color </strong>:
               <Text className="d-inline text-capitalize">
                 {currentProduct.color}

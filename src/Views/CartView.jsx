@@ -1,8 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import SingleItemCart from "../components/SingleItemCart";
-import { Box, Button, GreenStyledButton, NavLink, Row } from "../components/styledComponents";
+import {
+  Box,
+  Button,
+  GreenStyledButton,
+  NavLink,
+  Row,
+} from "../components/styledComponents";
 import { calculateTotalPrice } from "../redux/cartSlice";
 
 const ContainerFuild = styled.div`
@@ -16,7 +22,6 @@ const ContainerFuild = styled.div`
     padding: 24px;
   }
 `;
-
 
 const Col = styled.div`
   border-top-right-radius: ${(props) => props.summery && "16px"};
@@ -34,8 +39,6 @@ const Col = styled.div`
     border-bottom-right-radius: ${(props) => props.summery && "16px"};
     border-bottom-left-radius: ${(props) => props.items && "0px"};
   }
- 
-
 `;
 
 const Container = styled.div`
@@ -74,7 +77,6 @@ const Select = styled.select`
 `;
 const Option = styled.option``;
 
-
 const Input = styled.input`
   border: 1px solid rgba(0, 0, 0, 0.137);
   padding: 1vh;
@@ -85,13 +87,19 @@ const Input = styled.input`
 `;
 
 const CartView = () => {
-  const cartProducts = useSelector(state=>state.cart.products)
-  let totalPrice = useSelector(state=>state.cart.totalPrice)
-  const dispatch = useDispatch()
+  const cartProducts = useSelector((state) => state.cart.products);
+  const [shippingCost, setShippingCost] = useState(5);
+  let totalPrice = useSelector((state) => state.cart.totalPrice);
+  let finalPrice = parseInt(totalPrice + parseFloat(shippingCost));
+  const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(calculateTotalPrice())
-  }, [cartProducts])
-  
+    dispatch(calculateTotalPrice());
+  }, [cartProducts]);
+
+  const changeShippingCost = (cost) => {
+    setShippingCost(cost);
+  };
+
   return (
     <>
       <ContainerFuild className="container-fluid">
@@ -99,19 +107,17 @@ const CartView = () => {
           <Row className="row">
             <Col className="col-lg-8" items>
               <Title className="h3 mt-2 py-3">Shopping Cart</Title>
-            
-              {
-                cartProducts.length===0? 'no item': cartProducts.map((item,i)=>{
-                  return (<SingleItemCart key={i}  {...item} />)
-                })
-              }            
-            <Box>
-            <Button className="btn btn-light my-3">
-                <NavLink to={'/shop'}>
-                Back to shop
+
+              {cartProducts.length === 0
+                ? "no item"
+                : cartProducts.map((item, i) => {
+                    return <SingleItemCart key={i} {...item} />;
+                  })}
+              <Box>
+                <NavLink to={"/shop"}>
+                  <Button className="btn btn-light my-3">Back to shop</Button>
                 </NavLink>
-              </Button>
-            </Box>
+              </Box>
             </Col>
             <Col className="col-lg-4 p-4" summery>
               <Title className="h3 mt-4" summery>
@@ -123,17 +129,22 @@ const CartView = () => {
                     ITEMS 3
                   </Title>
                   <Title className="my-2" medium noBorder>
-                  $ {totalPrice}
+                    $ {totalPrice}
                   </Title>
                 </Box>
                 <Box className="my-2">
                   <Title className="mt-2 mb-4" medium noBorder>
                     Shipping
                   </Title>
-                  <Select>
-                    <Option>Standard-Delivery- &euro;5.00</Option>
-                    <Option>Fast - &euro;15.00</Option>
-                    <Option>DHL- &euro;30.00</Option>
+                  <Select
+                    onChange={(e) => changeShippingCost(e.target.value)}
+                    value={shippingCost}
+                  >
+                    <Option value="5">
+                      Standard-Delivery- ${parseInt(5.0)}
+                    </Option>
+                    <Option value="15"> Fast- {15.0}</Option>
+                    <Option value="30">DHL- ${30.0}</Option>
                   </Select>
                 </Box>
                 <Box>
@@ -147,12 +158,13 @@ const CartView = () => {
                     TOTAL PRICE
                   </Title>
                   <Title className="my-3" medium noBorder>
-                    $ {totalPrice+1000}
-                   
+                    $ {finalPrice}
                   </Title>
                 </Box>
               </Box>
-              <GreenStyledButton checkout className=" mt-5 mb-4 w-100">Checkout</GreenStyledButton>
+              <GreenStyledButton checkout className=" mt-5 mb-4 w-100">
+                Checkout
+              </GreenStyledButton>
             </Col>
           </Row>
         </Container>

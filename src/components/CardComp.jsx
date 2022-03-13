@@ -59,7 +59,10 @@ const LinkComp = styled(Link)`
 
   //Add product to cart
   const addProductToCart = () => {
-    dispatch(addProduct({id,images,thumbnail,name,price,model_name,rating}));
+
+    let qauntity = 1
+    
+    dispatch(addProduct({id,images,thumbnail,name,price,model_name,rating,qauntity}));
   };
     return (
     <Card className='card mx-2 mb-5 shadow-sm p-1 d-flex flex-column justify-content-around'>

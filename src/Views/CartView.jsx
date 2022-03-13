@@ -1,8 +1,9 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import SingleItemCart from "../components/SingleItemCart";
 import { Box, Button, GreenStyledButton, NavLink, Row } from "../components/styledComponents";
+import { calculateTotalPrice } from "../redux/cartSlice";
 
 const ContainerFuild = styled.div`
   background-color: #a8a8a8;
@@ -27,20 +28,25 @@ const Col = styled.div`
   color: ${(props) => props.summery && "#ffffff"};
   border-bottom-left-radius: ${(props) => props.items && "16px"};
   min-height: 30 rem;
-  @media (max-width: 767px) {
+  @media (max-width: 990px) {
     border-top-right-radius: ${(props) => props.summery && "0px"};
     border-bottom-left-radius: ${(props) => props.summery && "16px"};
     border-bottom-right-radius: ${(props) => props.summery && "16px"};
     border-bottom-left-radius: ${(props) => props.items && "0px"};
   }
+ 
+
 `;
 
 const Container = styled.div`
   background-color: white;
   border-radius: 16px;
   padding-left: 20px;
-  @media (max-width: 767px) {
+  @media (max-width: 990px) {
     padding-left: 0;
+  }
+  @media (max-width: 940px) {
+    flex-direction: column !important;
   }
 `;
 const Title = styled.h1`
@@ -79,20 +85,23 @@ const Input = styled.input`
 `;
 
 const CartView = () => {
-
   const cartProducts = useSelector(state=>state.cart.products)
-
+  let totalPrice = useSelector(state=>state.cart.totalPrice)
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(calculateTotalPrice())
+  }, [cartProducts])
+  
   return (
     <>
       <ContainerFuild className="container-fluid">
         <Container className="">
           <Row className="row">
-            <Col className="col-md-8" items>
+            <Col className="col-lg-8" items>
               <Title className="h3 mt-2 py-3">Shopping Cart</Title>
             
               {
                 cartProducts.length===0? 'no item': cartProducts.map((item,i)=>{
-                  
                   return (<SingleItemCart key={i}  {...item} />)
                 })
               }            
@@ -104,7 +113,7 @@ const CartView = () => {
               </Button>
             </Box>
             </Col>
-            <Col className="col-md-4 p-4" summery>
+            <Col className="col-lg-4 p-4" summery>
               <Title className="h3 mt-4" summery>
                 Summery
               </Title>
@@ -114,7 +123,7 @@ const CartView = () => {
                     ITEMS 3
                   </Title>
                   <Title className="my-2" medium noBorder>
-                    $134
+                  $ {totalPrice}
                   </Title>
                 </Box>
                 <Box className="my-2">
@@ -138,7 +147,8 @@ const CartView = () => {
                     TOTAL PRICE
                   </Title>
                   <Title className="my-3" medium noBorder>
-                    $140
+                    $ {totalPrice+1000}
+                   
                   </Title>
                 </Box>
               </Box>

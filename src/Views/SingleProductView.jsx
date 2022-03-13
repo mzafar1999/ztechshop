@@ -58,7 +58,7 @@ const SingleProductView = () => {
   let [qauntity, setQauntity] = useState(1);
   //Add product to cart
   const addProductToCart = () => {
-    dispatch(addProduct({ ...currentProduct }));
+    dispatch(addProduct({ ...currentProduct,qauntity }));
   };
   const increaseQty = () => {
     setQauntity((qauntity += 1));

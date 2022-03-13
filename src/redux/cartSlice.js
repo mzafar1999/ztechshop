@@ -42,10 +42,16 @@ const cartSlice = createSlice({
             return p+c
           },0)
         state.totalPrice = totalPriceOfProducts
+     },
+     removeItemFromCart:(state,action) => {
+          let filteredProducts = state.products.filter((product)=>{
+              return product.id !==action.payload
+          })
+          state.products = filteredProducts
      }
 
    }
 })
 
-export const {addProduct,qtyInc,qtyDec,calculateTotalPrice} = cartSlice.actions
+export const {addProduct,qtyInc,qtyDec,calculateTotalPrice,removeItemFromCart} = cartSlice.actions
 export default cartSlice.reducer

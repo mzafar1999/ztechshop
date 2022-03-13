@@ -88,7 +88,7 @@ const Input = styled.input`
 
 const CartView = () => {
   const cartProducts = useSelector((state) => state.cart.products);
-  const [shippingCost, setShippingCost] = useState(5);
+  const [shippingCost, setShippingCost] = useState(0);
   let totalPrice = useSelector((state) => state.cart.totalPrice);
   let finalPrice = parseInt(totalPrice + parseFloat(shippingCost));
   const dispatch = useDispatch();
@@ -140,8 +140,8 @@ const CartView = () => {
                     onChange={(e) => changeShippingCost(e.target.value)}
                     value={shippingCost}
                   >
-                    <Option value="5">
-                      Standard-Delivery- ${parseInt(5.0)}
+                    <Option value="0">
+                      Standard-Delivery- $0
                     </Option>
                     <Option value="15"> Fast- {15.0}</Option>
                     <Option value="30">DHL- ${30.0}</Option>

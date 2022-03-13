@@ -2,8 +2,9 @@ import styled from "styled-components";
 import { Box, Title, Text } from "../components/styledComponents";
 import { BiMinusCircle } from "react-icons/bi";
 import { MdOutlineAddCircleOutline } from "react-icons/md";
+import { TiDeleteOutline } from "react-icons/ti";
 import { useDispatch } from "react-redux";
-import { qtyDec, qtyInc } from "../redux/cartSlice";
+import { qtyDec, qtyInc, removeItemFromCart } from "../redux/cartSlice";
 const Card = styled.div`
   min-height: 120px;
   width: 100%;
@@ -25,6 +26,7 @@ const Image = styled.img`
 const PriceBox = styled.div`
   @media (max-width:768px) {
     margin: 10px auto;
+    text-align: center;
   }
 `
 const ItemDetailsBox = styled.div`
@@ -43,9 +45,14 @@ const SingleItemCart = ({ id, name, price, images, qauntity }) => {
   const decreaseQty = (id) => {
     dispatch(qtyDec(id));
   };
+
+  const removeItem = (id) => {
+    dispatch(removeItemFromCart(id)) 
+  }
+
   return (
     <Card className="row d-flex border-bottom align-items-center">
-      <ItemDetailsBox className="d-flex align-items-center col-md-6 col-sm-12">
+      <ItemDetailsBox className="d-flex align-items-center col-md-5 col-sm-12">
         <ImageWrapper>
           <Image src={images[0].imageLink}></Image>
         </ImageWrapper>
@@ -74,9 +81,12 @@ const SingleItemCart = ({ id, name, price, images, qauntity }) => {
           role="button"
         />
       </Box>
-      <PriceBox className="col-md-2 text-center mt-sm-3">
+      <PriceBox className="col-md-2 mt-sm-3 col-sm-12  text-center">
         <Title className="h5">${price * qauntity}</Title>
       </PriceBox>
+      <Box className="col-1 mb-2">
+      <TiDeleteOutline onClick={()=> removeItem(id)} size={30} style={{color:'red'}} role='button' />
+      </Box>
     </Card>
   );
 };

@@ -48,7 +48,9 @@ export const GreenStyledButton = styled.button`
 	padding: 10px 10px;
 	margin-top: 5px;
 	line-height: 16px;
-	border-radius: 20px;
+	border-radius: ${props=>props.smallBorder? '5px'  :  '20px'};
+	border-radius: ${props=>props.noBorder? '0px'  :  '20px'};
+
     width:200px ;
     margin: 0 auto;
     font-family: 'Open Sans', sans-serif;

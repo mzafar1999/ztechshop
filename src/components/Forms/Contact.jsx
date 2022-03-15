@@ -34,7 +34,16 @@ const Image = styled.image`
     
 `
 const Input = styled.input`
-    
+    &:focus{
+		border-color: #29E78E !important;
+		box-shadow: 0 0 0 0.2rem rgb(8 242 106 / 25%) !important;
+	}
+`
+export const Textarea = styled.textarea`
+    &:focus{
+		border-color: #29E78E !important;
+		box-shadow: 0 0 0 0.2rem rgb(8 242 106 / 25%) !important;
+	}
 `
 const Button = styled.button`
     
@@ -122,7 +131,7 @@ const Contact = () => {
 
         <Box className="form-group">
           <Label htmlFor="message"> Message </Label>
-          <textarea rows='6'
+          <Textarea rows='6'
             name="message"
             type="text"
             className="form-control"

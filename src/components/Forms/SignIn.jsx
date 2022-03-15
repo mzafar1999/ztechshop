@@ -3,6 +3,7 @@ import React from 'react'
 import { useFormik } from "formik";
 import * as Yup from 'yup';
 import styled from "styled-components";
+import { GreenStyledButton } from "../styledComponents";
 
 const Container = styled.div`
     margin: 0 auto ;
@@ -22,19 +23,22 @@ const Container = styled.div`
     }
     
 `
+
 const Box = styled.div`
     
 `
-const Input = styled.input`
-    
-`
-const Button = styled.button`
-    
-`
+
 const Form = styled.form`
     
 `
 const Label = styled.label``
+
+const Input = styled.input`
+    &:focus{
+		border-color: #29E78E !important;
+		box-shadow: 0 0 0 0.2rem rgb(8 242 106 / 25%) !important;
+	}
+`
 
 const SignIn = () => {
 
@@ -91,9 +95,9 @@ const SignIn = () => {
        
         
         <Box className="form-group">
-          <Button type="submit" className="btn btn-primary">
+          <GreenStyledButton smallBorder type="submit" className="btn btn-primary">
             Sign In
-          </Button>
+          </GreenStyledButton>
         </Box>
       </Form>
     </Box>

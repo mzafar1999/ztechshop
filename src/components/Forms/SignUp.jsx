@@ -3,6 +3,7 @@ import React from 'react'
 import { useFormik } from "formik";
 import * as Yup from 'yup';
 import styled from "styled-components";
+import { GreenStyledButton } from "../styledComponents";
 
 const Container = styled.div`
     margin: 0 auto ;
@@ -26,7 +27,10 @@ const Box = styled.div`
     
 `
 const Input = styled.input`
-    
+    &:focus{
+		border-color: #29E78E !important;
+		box-shadow: 0 0 0 0.2rem rgb(8 242 106 / 25%) !important;
+	}
 `
 const Button = styled.button`
     
@@ -144,16 +148,16 @@ const SignUp = () => {
         </Box>
         
         <Box className="form-group">
-          <Button type="submit" className="btn btn-primary">
+          <GreenStyledButton green smallBorder type="submit" className="">
             Register
-          </Button>
-          <Button
+          </GreenStyledButton>
+          <GreenStyledButton  smallBorder
             type="button"
-            className="btn btn-warning float-right"
+            className="float-right"
             onClick={formik.handleReset}
           >
             Reset
-          </Button>
+          </GreenStyledButton>
         </Box>
       </Form>
     </Box>

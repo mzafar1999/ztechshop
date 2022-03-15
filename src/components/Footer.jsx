@@ -3,11 +3,16 @@ import { MdEmail, MdLocationOn } from 'react-icons/md';
 import { AiFillPhone } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import {GreenStyledButton} from './styledComponents'
 import { FaFacebookF, FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { Row,Col } from './styledComponents';
-const FooterDiv = styled.div``;
+const FooterDiv = styled.div`
+	background-color: #29E78E;
+`;
 
-const Container = styled.div``;
+const Container = styled.div`
+
+`;
 const NavLink = styled(Link)`
     text-decoration: none;
     color: white;
@@ -23,12 +28,18 @@ const TextAndIconWrapper = styled.div`
 	font-size: 1.1rem;
 `;
 
-const Line = styled.div`border-top: 1px solid #2d343f;`;
+const Line = styled.div`
+	border-top: 1px solid #2d343f;
+	`;
 const Input = styled.input`
 	color: white;
-	background-color: #2d343f;
+	background-color: #fff;
+	&:focus{
+		border-color: #29E78E !important;
+		box-shadow: 0 0 0 0.2rem rgb(8, 242, 106 / 25%) !important;
+	}
 `;
-const Button = styled.button`width: 150px;`;
+
 const SocialIconWrapper = styled.div`
 	border: 1px solid #2d343f;
 	border-radius: 50%;
@@ -74,7 +85,7 @@ const Footer = () => {
 		}
 	];
 	return (
-		<FooterDiv className="bg-dark">
+		<FooterDiv >
 			<Container className="container">
 				<Row className="row">
 					<Col className="col-md-4 pt-5">
@@ -123,9 +134,9 @@ const Footer = () => {
 							);
 						})}
 					</Col>
-					<Col className="col-auto d-flex mt-2">
+					<Col className="col-auto d-flex mt-2 align-items-center mx-2"  >
 						<Input className="form-control border-light" placeholder="Email Address" />
-						<Button className="btn btn-success mx-1">Subscribe</Button>
+						<GreenStyledButton smallBorder className="btn btn-success mx-1">Subscribe</GreenStyledButton>
 					</Col>
 				</Row>
 			</Container>

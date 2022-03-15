@@ -16,6 +16,11 @@ const Container = styled.div`
 const NavLink = styled(Link)`
     text-decoration: none;
     color: white;
+	&:hover{
+    text-decoration: none;
+    color:black;
+    
+  }
     
 `;
 
@@ -36,7 +41,7 @@ const Input = styled.input`
 	background-color: #fff;
 	&:focus{
 		border-color: #29E78E !important;
-		box-shadow: 0 0 0 0.2rem rgb(8, 242, 106 / 25%) !important;
+		box-shadow: 0 0 0 0.25rem rgb(14 248 115 / 50%) !important;
 	}
 `;
 
@@ -48,6 +53,10 @@ const SocialIconWrapper = styled.div`
 const ALink = styled.a`
     text-decoration: none;
     color:white;
+	&:hover{
+        color: #08f26a;
+
+    }
 `
 const SubTitle = styled.p`color: white;`;
 
@@ -136,7 +145,7 @@ const Footer = () => {
 					</Col>
 					<Col className="col-auto d-flex mt-2 align-items-center mx-2"  >
 						<Input className="form-control border-light" placeholder="Email Address" />
-						<GreenStyledButton smallBorder className="btn btn-success mx-1">Subscribe</GreenStyledButton>
+						<GreenStyledButton smallBorder className=" mx-1">Subscribe</GreenStyledButton>
 					</Col>
 				</Row>
 			</Container>

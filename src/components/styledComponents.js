@@ -49,7 +49,6 @@ export const GreenStyledButton = styled.button`
 	margin-top: 5px;
 	line-height: 16px;
 	border-radius: ${props=>props.smallBorder? '5px'  :  '20px'};
-	border-radius: ${props=>props.noBorder? '0px'  :  '20px'};
 
     width:200px ;
     margin: 0 auto;
@@ -66,7 +65,6 @@ export const GreenStyledButton = styled.button`
         color: black;
         background: #06c556;
         border: 1px solid #08f26a;
-
     }   
 `
 
@@ -77,7 +75,7 @@ export const NavLink = styled(Link)`
   color:black;
   &:hover{
     text-decoration: none;
-    color:black;
+    color:#08f26a;
     
   }
 `;

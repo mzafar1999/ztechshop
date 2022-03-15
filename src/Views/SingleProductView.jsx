@@ -103,12 +103,12 @@ const SingleProductView = () => {
               <Title className="h6">
                 {moreDescription ? currentProduct.description : lessDescription}{" "}
                 <Text
-                  className="text-primary"
+                  className="text-success"
                   role="button"
                   onClick={() => setMoreDescription(!moreDescription)}
                 >
                   <u>{moreDescription ? "See less" : "Read More"}</u>
-                </Text>{" "}
+                </Text>
               </Title>
             </Box>
             <Box className="mb-1">

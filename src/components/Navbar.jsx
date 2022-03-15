@@ -170,7 +170,9 @@ const Navbar = () => {
               </NavLink>
             </ReactIconWrapper>
             <ReactIconWrapper>
+              <NavLink to={'/sign-in'}>
               <MdAccountCircle />
+              </NavLink>
               <AccountBox>
                 <NavLink to='/sign-up'>
                 <Text>Sign-Up</Text>

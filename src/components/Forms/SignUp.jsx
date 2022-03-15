@@ -24,7 +24,16 @@ const Container = styled.div`
     
 `
 const Box = styled.div`
-    
+    @media (max-width: 587px) {
+      
+    }
+`
+const ButtonBox = styled.div`
+    @media (max-width: 587px) {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
 `
 const Input = styled.input`
     &:focus{
@@ -32,9 +41,7 @@ const Input = styled.input`
 		box-shadow: 0 0 0 0.2rem rgb(8 242 106 / 25%) !important;
 	}
 `
-const Button = styled.button`
-    
-`
+
 const Form = styled.form`
     
 `
@@ -147,18 +154,18 @@ const SignUp = () => {
           </Box>
         </Box>
         
-        <Box className="form-group">
-          <GreenStyledButton green smallBorder type="submit" className="">
+        <ButtonBox className="form-group">
+          <GreenStyledButton green smallBorder type="submit" className="my-2">
             Register
           </GreenStyledButton>
           <GreenStyledButton  smallBorder
             type="button"
-            className="float-right"
+            className="float-right my-2"
             onClick={formik.handleReset}
           >
             Reset
           </GreenStyledButton>
-        </Box>
+        </ButtonBox>
       </Form>
     </Box>
     </Container>

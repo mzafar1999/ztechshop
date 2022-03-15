@@ -40,7 +40,7 @@ export const Label = styled.label`
 export const GreenStyledButton = styled.button`
     color: ${props=>props.checkout?'white':'#08f26a'} ;
     font-weight: bold;
-	font-size: 12px;
+	font-size: 14px;
 	text-transform: uppercase;
 	background: ${props=>props.checkout?'#08f26a':'white'} none;
 
@@ -50,7 +50,7 @@ export const GreenStyledButton = styled.button`
 	line-height: 16px;
 	border-radius: ${props=>props.smallBorder? '5px'  :  '20px'};
 
-    width:200px ;
+    width:300px ;
     margin: 0 auto;
     font-family: 'Open Sans', sans-serif;
     @media (min-width:486px) {

@@ -42,13 +42,13 @@ const SubTitle = styled.p`color: white;`;
 
 const Footer = () => {
 	const productsLinks = [
-		'Luxury',
-		'Sport Wear',
-		"Men's Shoes",
-		"Women's Shoes",
-		'Popular Dress',
-		'Gym Accessories',
-		'Sport Shoes'
+		'Gaming',
+		'PC',
+		"Console",
+		"Laptop",
+		'Controller',
+		'Tech Accessories',
+		
 	];
 	const furtherInfoLinks = [ 'Home', 'About Us', 'Shop Locations', 'FAQs', 'Contact' ];
 	const socialIcons = [

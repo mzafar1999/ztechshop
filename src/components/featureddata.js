@@ -5,7 +5,7 @@ export const featureddata = [
 		title: 'Torch',
         price:240,
         reviews:20,
-        stars:3,
+        rating:3,
 		desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.'
 	},
 	{
@@ -14,7 +14,7 @@ export const featureddata = [
 		title: 'Apple Watch',
         price:350,
         reviews:5,
-        stars:5,
+        rating:5,
 
 		desc: 'Aenean gravida dignissim finibus. Nullam ipsum diam, posuere vitae pharetra sed, commodo ullamcorper.'
 	},
@@ -24,7 +24,7 @@ export const featureddata = [
 		title: 'Camera',
         price:690,
         reviews:12,
-        stars:4,
+        rating:4,
 		desc:
 			'Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque ipsum lobortis nec.'
 	}

@@ -58,7 +58,7 @@ const Contact = () => {
     const validationSchema = Yup.object().shape({
         firstName: Yup.string().required("Please provide your name"),
         lastName: Yup.string().required("Please provide lastname"),
-        email: Yup.string().required("Please provide your name").email('Email is invalid'),
+        email: Yup.string().required("Please provide your email").email('Email is invalid'),
         message: Yup.string().required("Please write your message"),
 
       });

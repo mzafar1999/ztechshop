@@ -68,7 +68,6 @@ const Featured = () => {
                     </Row>
                     <DetailsWrapper className="p-3 d-flex flex-column justify-content-around">
                       <Title className="h2">
-                
                         <NavLink to={`/`}> {item.title} </NavLink>{" "}
                       </Title>
                       <Description>{item.desc}</Description>

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import CardComp from "../components/CardComp";
+import { RiArrowDownSLine } from "react-icons/ri";
+import { Box } from "../components/styledComponents";
 export const ContainerFluid = styled.section``;
 export const Container = styled.section``;
 export const Row = styled.div``;
@@ -47,19 +49,32 @@ const SortBox = styled.div`
 `;
 const Select = styled.select``;
 const Option = styled.option``;
-const GenderCatDiv = styled.div``;
 const Heading = styled.p`
   font-size: 24px;
 `;
 const CategoryBox = styled.div`
   margin-bottom: 10px;
+  height: ${(props) => (props.expand ? "240px" : "50px")};
+  overflow: hidden;
+  transition: height 500ms;
 `;
-const FiltersBox = styled.div``;
+const FiltersBox = styled.div`
+  transition: height 500ms;
+  height: ${(props) => (props.expand ? "720px" : "50px")};
+  overflow: hidden;
+`;
 
 const ShopView = () => {
   let allProducts = useSelector((state) => state.products.allProducts);
 
-  
+  const [expandCategory, setexpandCategory] = useState(false);
+  const expandCategoryHandler = () => {
+    setexpandCategory(!expandCategory);
+  };
+  const [expandFilters, setexpandFilters] = useState(false);
+  const expandFiltersHandler = () => {
+    setexpandFilters(!expandFilters);
+  };
 
   return (
     <>
@@ -67,19 +82,53 @@ const ShopView = () => {
         <Container className="container pt-3">
           <Row className="row d-flex align-items-baseline">
             <Col className="col-md-3 d-flex flex-column">
-              <Title className="h1 mb-5" noCursor big>
-                Shop by Category
+              <Title className="h1 mb-4 mt-2 mx-2 " noCursor big>
+                <strong>Shop by Category</strong>
               </Title>
-              <CategoryBox className="border p-3">
-                <Title>All Categories</Title>
+
+              <CategoryBox
+                expand={expandCategory ? "expand" : null}
+                className={
+                  expandCategory
+                    ? " border px-2 mt-2 border py-2"
+                    : " border border px-2 mt-2 py-2"
+                }
+              >
+                <Box
+                  onClick={expandCategoryHandler}
+                  className="d-flex align-items-baseline justify-content-between"
+                >
+                  <Heading className="mb-2">All Categories</Heading>
+                  <Box className="">
+                    <RiArrowDownSLine
+                      style={{ fontSize: "25px" }}
+                      role="button"
+                    />
+                  </Box>
+                </Box>
                 <Title> Smart Phone </Title>
                 <Title> Laptop </Title>
                 <Title> Console </Title>
                 <Title> TV </Title>
               </CategoryBox>
-              <FiltersBox className="border p-3 mt-4">
-                <Heading className="border py-2 text-center">Filters</Heading>
-                <Col className="mx-2">
+              <FiltersBox
+                className="border px-2 mt-4 mb-4"
+                expand={expandFilters ? "expand" : null}
+              >
+                <Box
+                  onClick={expandFiltersHandler}
+                  className=" d-flex align-items-baseline justify-content-between"
+                >
+                  <Heading className="mt-1">Filters</Heading>
+                  <Box className="">
+                    <RiArrowDownSLine
+                      onClick={expandFiltersHandler}
+                      style={{ fontSize: "25px" }}
+                      role="button"
+                    />
+                  </Box>
+                </Box>
+                <Col className={"mx-2 "}>
                   <Title noCursor> Color </Title>
                   <Title subheading> Gold </Title>
                   <Title subheading> White </Title>
@@ -102,11 +151,6 @@ const ShopView = () => {
             </Col>
             <Col className="col-md-9">
               <Row className="d-flex justify-content-between mb-4 ">
-                <GenderCatDiv className="d-flex">
-                  <Title className=" mx-1">All</Title>
-                  <Title className=" mx-2">Entertainments</Title>
-                  <Title className=" mx-1">Smart Phones</Title>
-                </GenderCatDiv>
                 <SortBox>
                   <Select className="form-select w-100">
                     <Option>A-Z</Option>

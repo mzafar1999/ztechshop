@@ -2,7 +2,7 @@ export const featureddata = [
 	{
 		id: 1,
 		img: '/images/feature1.jpg',
-		title: 'Torch',
+		title: 'Sony Speaker',
         price:240,
         reviews:20,
         rating:3,

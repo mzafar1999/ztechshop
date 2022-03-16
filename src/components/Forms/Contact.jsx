@@ -62,7 +62,6 @@ const Contact = () => {
         message: Yup.string().required("Please write your message"),
 
       });
-
       const formik = useFormik({
         initialValues: {
           firstName: "",

@@ -29,7 +29,7 @@ export const allProducts = [
   {
     id: 2,
     name: "Samsung Galaxy S10+, 512GB, Black",
-    model_name: "galaxy s10+",
+    model_name: "Galaxy S10+",
     storage: 512,
     os: "Android",
     category: "phone",
@@ -56,7 +56,7 @@ export const allProducts = [
   {
     id: 3,
     name: "Samsung Galaxy Note 10+, 256GB",
-    model_name: "note 10+",
+    model_name: "Note 10+",
     storage: 256,
     os: "Android",
     category: "phone",

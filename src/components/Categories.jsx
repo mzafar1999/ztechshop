@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { catagroydata } from './categoriesdata'
-import { Container,Row,Col,TitleWrapper,Title,SubTitle,CardWrapper,ImageWrapper,Button } from './styledComponents'
+import { Container,Row,Col,TitleWrapper,Title,SubTitle,CardWrapper,ImageWrapper,Button, GreenStyledButton } from './styledComponents'
 
 
 
@@ -19,7 +19,7 @@ const Categories = () => {
         <Row className='row '>
             <TitleWrapper className='col-md-6 text-center mx-auto'>
                 <Title>Categories of The Month</Title>
-                <SubTitle>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</SubTitle>
+                <SubTitle>Explore products by categories.</SubTitle>
             </TitleWrapper>
         </Row>
         <Row className='row'>
@@ -31,7 +31,7 @@ const Categories = () => {
                         </ImageWrapper>
                         <TitleWrapper className='d-flex flex-column align-items-center'>
                             <Title  className='text-center my-3 h4'> {cat.title} </Title>
-                            <Button className='btn btn-success d-block'>Shop Now</Button>
+                            <GreenStyledButton className='d-block'>Shop Now</GreenStyledButton>
                         </TitleWrapper>
                     </CardWrapper>
                 </Col>)

@@ -1,1 +1,1 @@
-export const catagroydata = [{id:1,img:'/images/category1.jpg',title:'Watches'},{id:1,img:'/images/category2.jpg',title:'Shoes'},{id:1,img:'/images/category3.jpg',title:'Accessories'}]
+export const catagroydata = [{id:1,img:'/images/laptop_category.jpg',title:'Laptops'},{id:1,img:'/images/phone_category.png',title:'Smart Phone'},{id:1,img:'/images/console_category.jpg',title:'Console'}]

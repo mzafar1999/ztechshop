@@ -17,7 +17,7 @@ export const Title = styled.p`
   cursor: ${(props) => (props.noCursor ? "default" : "pointer")};
 
   &:hover {
-    color: ${(props) => (props.noCursor ? "black" : "#67bbff")};
+    color: ${(props) => (props.noCursor ? "black" : "#08f26a")};
   }
 `;
 export const SubTitle = styled.p``;
@@ -106,7 +106,7 @@ const ShopView = () => {
                     />
                   </Box>
                 </Box>
-                <Title> Smart Phone </Title>
+                <Title className="mt-2"> Smart Phone </Title>
                 <Title> Laptop </Title>
                 <Title> Console </Title>
                 <Title> TV </Title>

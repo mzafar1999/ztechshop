@@ -3,6 +3,7 @@ import React from 'react'
 import { useFormik } from "formik";
 import * as Yup from 'yup';
 import styled from "styled-components";
+import { GreenStyledButton } from "../styledComponents";
 
 const Container = styled.div`
 margin: 0 auto ;
@@ -144,9 +145,9 @@ const Contact = () => {
         </Box>
         
         <Box className="form-group">
-          <Button type="submit" className="btn btn-primary">
+          <GreenStyledButton smallBorder type="submit">
             Submit
-          </Button>
+          </GreenStyledButton>
         </Box>
       </Form>
     </Box>

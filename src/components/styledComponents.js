@@ -49,8 +49,8 @@ export const GreenStyledButton = styled.button`
 	margin-top: 5px;
 	line-height: 16px;
 	border-radius: ${props=>props.smallBorder? '5px'  :  '20px'};
-
-    width:300px ;
+    min-width: 130px;
+    max-width:250px ;
     margin: 0 auto;
     font-family: 'Open Sans', sans-serif;
     @media (min-width:486px) {

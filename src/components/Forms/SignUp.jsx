@@ -29,6 +29,9 @@ const Box = styled.div`
     }
 `
 const ButtonBox = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     @media (max-width: 587px) {
       display: flex;
       flex-direction: column;
@@ -160,7 +163,7 @@ const SignUp = () => {
           </GreenStyledButton>
           <GreenStyledButton  smallBorder
             type="button"
-            className="float-right my-2"
+            className=" my-2"
             onClick={formik.handleReset}
           >
             Reset

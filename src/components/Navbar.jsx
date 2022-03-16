@@ -42,8 +42,16 @@ const ImageWrapper = styled.div`
   padding: 20px; ;
 `;
 const Image = styled.img`
-  height: 100%;
-  width: 100%;
+    max-height: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  @media (max-width:486px) {
+    max-height: 60%;
+  max-width: 60%;
+  min-height: 40%;
+  min-width: 40%;
+  }
   object-fit: cover;
 `;
 const LinkWrapper = styled.div`
@@ -94,12 +102,12 @@ const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
   return (
     <>
-		{smallScreen? <Container className=" justify-content-around align-items-center">
+		{smallScreen? <Container className=" justify-content-between align-items-center">
         <Left className="d-flex justify-content-between align-items-center">
           <ImageWrapper className="">
             <Image src="/images/logo.png" />
           </ImageWrapper>
-    	<Box>
+    <Box>
 			<GiHamburgerMenu onClick={()=>setShowNav(!showNav)} size={35} className='mx-3'/>
 		</Box>
         </Left>

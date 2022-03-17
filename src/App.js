@@ -12,40 +12,64 @@ import Footer from './components/Footer';
 import SignUp from './components/Forms/SignUp';
 import SignIn from './components/Forms/SignIn';
 import Contact from './components/Forms/Contact';
+import AdminFrontend from './admin/AdminFrontend';
+import { useState } from 'react';
+import Sidebar from './admin/components/Sidebar';
+import AllProducts from './admin/views/AllProducts';
+import AddProduct from './admin/views/AddProduct';
 function App() {
 
   
+  const [admin, setAdmin] = useState(true)
+  
+  if(!admin){
+    return (
+      <Router>
+        <TopNav/>
+        <Navbar/>
+        <Switch>
+          <Route exact path={`/`}>
+            <Home></Home>
+          </Route>
+          <Route path={`/product/:id`}>
+            <SingleProductView></SingleProductView>
+          </Route>
+          <Route path={`/shop`}>
+            <ShopView></ShopView>
+          </Route>
+          <Route path={`/cart`}>
+            <CartView></CartView>
+          </Route>
+          <Route path={`/sign-up`}>
+            <SignUp></SignUp>
+          </Route>
+          <Route path={`/sign-in`}>
+            <SignIn></SignIn>
+          </Route>
+          <Route path={`/contact`}>
+            <Contact></Contact>
+          </Route>
+        </Switch>
+        <Footer/>
+      </Router>
+    );
+  }
+  if(admin){
+    return (
+      <Router>
+        <Sidebar/>
+        <Switch>
+          <Route path={`/all-products`}>
+            <AllProducts/>
+          </Route>
+          <Route path={`/add-product`}>
+            <AddProduct/>
+          </Route>
 
-  return (
-    <Router>
-      <TopNav/>
-      <Navbar/>
-      <Switch>
-        <Route exact path={`/`}>
-          <Home></Home>
-        </Route>
-        <Route path={`/product/:id`}>
-          <SingleProductView></SingleProductView>
-        </Route>
-        <Route path={`/shop`}>
-          <ShopView></ShopView>
-        </Route>
-        <Route path={`/cart`}>
-          <CartView></CartView>
-        </Route>
-        <Route path={`/sign-up`}>
-          <SignUp></SignUp>
-        </Route>
-        <Route path={`/sign-in`}>
-          <SignIn></SignIn>
-        </Route>
-        <Route path={`/contact`}>
-          <Contact></Contact>
-        </Route>
-      </Switch>
-      <Footer/>
-    </Router>
-  );
+        </Switch>
+      </Router>
+    );
+  }
 }
 
 export default App;

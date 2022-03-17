@@ -138,7 +138,6 @@ const ShopView = () => {
                   <Title subheading> Small </Title>
                   <Title subheading> Medium </Title>
                   <Title subheading> Large </Title>
-
                   <Title noCursor> Brand </Title>
                   <Title subheading> Apple </Title>
                   <Title subheading> Samsung </Title>

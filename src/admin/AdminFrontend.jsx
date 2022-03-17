@@ -16,7 +16,7 @@ const AdminFrontend = () => {
   return (
     <Container className='container-fluid'>
        <Right>
-
+        
        </Right>
 
     </Container>

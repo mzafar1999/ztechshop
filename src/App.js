@@ -12,7 +12,6 @@ import Footer from './components/Footer';
 import SignUp from './components/Forms/SignUp';
 import SignIn from './components/Forms/SignIn';
 import Contact from './components/Forms/Contact';
-import AdminFrontend from './admin/AdminFrontend';
 import { useState } from 'react';
 import Sidebar from './admin/components/Sidebar';
 import AllProducts from './admin/views/AllProducts';

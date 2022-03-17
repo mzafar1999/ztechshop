@@ -19,7 +19,7 @@ import AddProduct from './admin/views/AddProduct';
 function App() {
 
   
-  const [admin, setAdmin] = useState(true)
+  const [admin, setAdmin] = useState(false)
   
   if(!admin){
     return (

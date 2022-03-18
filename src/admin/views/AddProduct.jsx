@@ -13,8 +13,9 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import Select from "react-select";
 import { colorOptions, phoneOSOptions, phoneStorageOptionos } from "../components/smartphone";
-import { laptopOSOptions, laptopStorageOptions } from "../components/laptop";
-import { consoleStorageOptions } from "../components/console";
+import { laptopColorOptions, laptopOSOptions, laptopStorageOptions } from "../components/laptop";
+import { consoleColorOptions, consoleStorageOptions } from "../components/console";
+import { TVColorOptions } from "../components/tv";
 
 const Container = styled.div`
   margin: 0 auto;
@@ -98,6 +99,9 @@ const AddProduct = () => {
 
   //Color
   const [deviceColor, setDeviceColor] = useState({value:'Black',label:'Black'})
+  const [laptopColor, setLaptopColor] = useState({value:'Black',label:'Black'})
+  const [consoleColor, setConsoleColor] = useState({value:'Black',label:'Black'})
+  const [TVColor, setTVColor] = useState({value:'Black',label:'Black'})
 
   return (
     <Container className="p-5">
@@ -187,9 +191,6 @@ const AddProduct = () => {
 
               {/* Size Selection */}
 
-
-
-
             </Col>
             <Col className="col-sm-6">
               <Box>
@@ -208,7 +209,7 @@ const AddProduct = () => {
               {/* Start of Color */}
              {
                categories.value==='smartPhone' && <Box>
-               <Label htmlFor="os">Phone Color</Label>
+               <Label htmlFor="smartphonecolor">Phone Color</Label>
                <Select
                  defaultValue={deviceColor}
                  onChange={setDeviceColor}
@@ -216,7 +217,36 @@ const AddProduct = () => {
                />
              </Box>
              }
-
+              {
+               categories.value==='laptop' && <Box>
+               <Label htmlFor="laptopcolor">Laptop Color</Label>
+               <Select
+                 defaultValue={laptopColor}
+                 onChange={setLaptopColor}
+                 options={laptopColorOptions}
+               />
+             </Box>
+             }
+                 {
+               categories.value==='console' && <Box>
+               <Label htmlFor="consolecolor">Console Color</Label>
+               <Select
+                 defaultValue={consoleColor}
+                 onChange={setConsoleColor}
+                 options={consoleColorOptions}
+               />
+             </Box>
+             }
+                 {
+               categories.value==='tv' && <Box>
+               <Label htmlFor="os">Laptop Color</Label>
+               <Select
+                 defaultValue={TVColor}
+                 onChange={setTVColor}
+                 options={TVColorOptions}
+               />
+             </Box>
+             }
             </Col>
           </Box>
 

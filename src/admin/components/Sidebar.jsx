@@ -39,6 +39,11 @@ const Sidebar = () => {
         text:"messages",
         link:"/messages"
     },
+    {
+      id:5,
+      text:"sign out",
+      link:"/sign-out"
+  },
   ];
 
   return (

@@ -46,13 +46,11 @@ const handleDragStart = (e) => e.preventDefault();
 const images = allProducts? allProducts.map((item) => {
 	return item.images[0]
 }):null;
-console.log(images.slice(0,3));
 const Slider = () => {
 	return (
 		<AliceCarousel autoPlay={true} infinite={true} animationDuration={3000} autoPlayInterval={2000} animationType={'fadeout'}
 			mouseTracking
 			items={allProducts.slice(0,3).map((item) => {
-				console.log(item);
 				return (
 					<Container className="container-fluid">
 						<Wrapper className="row align-items-center p-5 d-flex justify-content-around">

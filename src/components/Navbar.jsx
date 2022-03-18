@@ -64,7 +64,7 @@ const AccountBox = styled.div`
   position:absolute;
   display:none;
   width: 100px;
-  height:80px;
+  height:115px;
   border:1px solid gray ;
   border-radius:10px ;
   background-color:white ;
@@ -143,6 +143,9 @@ const Navbar = () => {
                 <NavLink to='/sign-in'>
                 <Text >Sign-In</Text>
                 </NavLink>
+                <NavLink to='/sign-in'>
+                <Text >Admin</Text>
+                </NavLink>
                 </AccountBox>
             </ReactIconWrapper>
         </Right>
@@ -187,6 +190,9 @@ const Navbar = () => {
                 </NavLink>
                 <NavLink to='/sign-in'>
                 <Text >Sign-In</Text>
+                </NavLink>
+                <NavLink to='/admin'>
+                <Text >Admin</Text>
                 </NavLink>
                 </AccountBox>
             </ReactIconWrapper>

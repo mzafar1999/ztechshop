@@ -36,7 +36,6 @@ const ItemDetailsBox = styled.div`
 
 
 const SingleProduct = ({image,name,stock,images,qauntity,price,}) => {
-    console.log(images);
   return (
     (
         <Card className="row d-flex border-bottom align-items-center">

@@ -36,6 +36,13 @@ export const Text = styled.p`
 `
 export const Label = styled.label`
 `
+export const SelectComp = styled.select`
+
+`
+export const OptionComp = styled.option`
+
+`
+
 
 export const GreenStyledButton = styled.button`
     color: ${props=>props.checkout?'white':'#08f26a'} ;
@@ -81,6 +88,9 @@ export const NavLink = styled(Link)`
 `;
 //Form
 export const Form = styled.form``
-export const Input = styled.div`
-
+export const Input = styled.input`
+ &:focus{
+		border-color: #29E78E !important;
+		box-shadow: 0 0 0 0.2rem rgb(8 242 106 / 25%) !important;
+	}
 `

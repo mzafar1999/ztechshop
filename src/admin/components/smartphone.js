@@ -15,14 +15,17 @@ export const phoneStorageOptionos = [
       {value:"android 11",label:'Android 11'},
   ]
 
-  export const colorOptions = [
+  export const phoneColorOptions = [
     {value:"Black",label:'Black'},
     {value:"Silvar",label:'Silvar'},
     {value:"White",label:'White'},
     {value:"Gold",label:'Gold'},
 ]
-export const phoneScreenSizeOptions = [
-    {value:"small screen",label:'Small Screen'},
-    {value:"medium screen",label:'Medium Screen'},
-    {value:"large screen",label:'Large Screen'},
+
+export const phoneBrandOptions = [
+    {value:"apple",label:'Apple'},
+    {value:"samsung",label:'Samsung'},
+    {value:"huawei",label:'Huawei'},
+    {value:"redmi",label:'Redmi'},
+    {value:"OnePlus",label:'OnePlus'},
 ]

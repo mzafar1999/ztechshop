@@ -15,3 +15,11 @@ export const laptopColorOptions = [
     {value:"Silvar",label:'Silvar'},
     {value:"White",label:'White'},
 ]
+
+export const laptopBrandOptions = [
+  {value:"apple",label:'Apple'},
+  {value:"samsung",label:'Samsung'},
+  {value:"hp",label:'Hp'},
+  {value:"Sony",label:'Sony'},
+  {value:"lenovo",label:'Lenovo'},
+]

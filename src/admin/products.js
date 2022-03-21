@@ -4,11 +4,11 @@ export const products = [
     name: "Apple iPhone 12, 128GB, White Unlocked",
     model_name: "iphone 12",
     storage: 128,
-    os: "IOS 14",
     category: "phone",
+    brand: "apple",
+    os: "IOS 14",
     color: "white",
     size: "medium 6.1 Inches",
-    brand: "apple",
     condition: "new",
     price: 899,
     description:

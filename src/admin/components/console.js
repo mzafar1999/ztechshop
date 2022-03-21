@@ -8,3 +8,8 @@
     {value:"Black",label:'Black'},
     {value:"White",label:'White'},
 ]
+
+export const consoleBrandOptions = [
+  {value:"Microsoft",label:'Microsoft'},
+  {value:"Sony",label:'Sony'},
+]

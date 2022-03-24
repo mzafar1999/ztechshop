@@ -7,15 +7,15 @@ const productsSLice = createSlice({
         allProducts,
         currentProduct:{},
         filteredProducts:[],
-        relatedProducts:[]
+        relatedProducts:[],
     },reducers:{
         selectCurretProduct : (state,action)=>{
             state.currentProduct = action.payload
         },
-        
+       
         
     }
 })
 
-export const {selectCurretProduct,getSingleProduct} = productsSLice.actions
+export const {selectCurretProduct} = productsSLice.actions
 export default productsSLice.reducer

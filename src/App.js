@@ -13,13 +13,13 @@ import SignUp from './components/Forms/SignUp';
 import SignIn from './components/Forms/SignIn';
 import Contact from './components/Forms/Contact';
 import { useState } from 'react';
-import Sidebar from './admin/components/Sidebar';
 import AllProducts from './admin/views/AllProducts';
-import AddProduct from './admin/views/AddProduct';
+import AdminFrontend from './admin/AdminFrontend';
+import AboutUs from './components/AboutUs';
 function App() {
 
   
-  const [admin, setAdmin] = useState(true)
+  const [admin, setAdmin] = useState(false)
   
   if(!admin){
     return (
@@ -45,6 +45,9 @@ function App() {
           <Route path={`/sign-in`}>
             <SignIn></SignIn>
           </Route>
+          <Route path={`/about-us`}>
+            <AboutUs></AboutUs>
+          </Route>
           <Route path={`/contact`}>
             <Contact></Contact>
           </Route>
@@ -56,13 +59,12 @@ function App() {
   if(admin){
     return (
       <Router>
-        <Sidebar/>
         <Switch>
           <Route path={`/all-products`}>
             <AllProducts/>
           </Route>
-          <Route path={`/add-product`}>
-            <AddProduct/>
+          <Route path={`/`}>
+            <AdminFrontend/>
           </Route>
 
         </Switch>

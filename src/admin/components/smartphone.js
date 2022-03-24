@@ -29,3 +29,19 @@ export const phoneBrandOptions = [
     {value:"redmi",label:'Redmi'},
     {value:"OnePlus",label:'OnePlus'},
 ]
+
+// const uploadImages = (e) => {
+  
+//     let files = e.target.files
+
+//     const data = new FormData();
+//     data.append('file',files)
+//     data.append('upload_preset','dmdxb6ix')
+//     axios.post(
+//       "https://api.cloudinary.com/v1_1/dghtzvam5/image/upload",
+//       data
+//     ).then((res) => {
+//       console.log(res);
+//     })
+  
+//   };

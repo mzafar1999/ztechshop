@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Sidebar from '../components/Sidebar'
 import SingleProduct from '../components/SingleProduct'
 import {products} from '../products'
 const Container = styled.div`
@@ -19,6 +20,7 @@ const Title = styled.h1`
 const AllProducts = () => {
   return (
     <Box className=' mt-2 mx-4 p-2'>
+        <Sidebar/>
         <Title className='text-center'>AllProducts</Title>
         <Container className='p-4  border '>
         { products.map((product) => {

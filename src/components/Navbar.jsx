@@ -89,14 +89,14 @@ const Text = styled.p`
   margin: 10px;
 `
 const Navbar = () => {
-  const [smallScreen, setSmallScreen] = useState(false);
+  const [smallScreen, setSmallScreen] = useState(true);
   let width;
   window.onresize = window.onload = function () {
     width = this.innerWidth;
-    if (width <= 960) {
-      setSmallScreen(true);
-    } else {
+    if (width >= 960) {
       setSmallScreen(false);
+    } else {
+      setSmallScreen(true);
     }
   };
   const [showNav, setShowNav] = useState(false);

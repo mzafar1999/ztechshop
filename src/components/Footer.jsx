@@ -134,18 +134,18 @@ const Footer = () => {
 					<Col className="col-12 my-4">
 						<Line className="" />
 					</Col>
-					<Col className="col-auto me-auto mt-2 d-flex">
+					<Col className=" me-auto mt-2 d-flex justify-content-center">
 						{socialIcons.map((social,i) => {
 							return (
-								<SocialIconWrapper key={i} className="mx-3">
+								<SocialIconWrapper key={i} className="mx-sm-2 mx-3 p-1 p-md-2">
 									<NavLink to={social.link}>{social.icon}</NavLink>
 								</SocialIconWrapper>
 							);
 						})}
 					</Col>
-					<Col className="col-auto d-flex mt-2 align-items-center mx-2"  >
+					<Col className="col-lg-4 col-md-6 mx-auto d-flex mt-2 align-items-center"  >
 						<Input className="form-control border-light" placeholder="Email Address" />
-						<GreenStyledButton smallBorder className=" mx-1">Subscribe</GreenStyledButton>
+						<GreenStyledButton smallBorder className=" mx-sm-1">Subscribe</GreenStyledButton>
 					</Col>
 				</Row>
 			</Container>

@@ -74,7 +74,6 @@ const PhoneCat = () => {
 
   const [modalIsOpen, setIsOpen] = useState(false);
   const [productModalOpen, setIsProductModalOpen] = useState(false)
-  const [uploading, setUploading] = useState(false)
   const uploadImages = (e) => {
     let files = e.target.files;
     const formData = new FormData();
@@ -92,6 +91,13 @@ const PhoneCat = () => {
   };
   if (imageUrl) {
     allPhoneImages.push(imageUrl);
+    setImageUrl("")
+
+  }
+  function clearArray(array) {
+    while (array.length) {
+      array.pop();
+    }
   }
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -107,7 +113,13 @@ const PhoneCat = () => {
       images: allPhoneImages,
     };
     setIsProductModalOpen(true)
+    setImageUrl("")
+    setAllPhoneImages([])
+    // allPhoneImages.splice(0, allPhoneImages.length)
+    console.log(product);
   };
+
+  
 
   return (
     <Container className="">
@@ -166,11 +178,10 @@ const PhoneCat = () => {
                   name="file" id="file"
                   hidden
                 />
-                <label htmlFor="file">Choose a file</label>
+                <label htmlFor="file">Image to upload</label>
                 <Box>
                   {modalIsOpen ? <Modal setIsOpen={setIsOpen} /> : null}
                 </Box>
-                {/* {uploading ? <p>Uploading...</p>:null} */}
 
               </Box>
             </Col>

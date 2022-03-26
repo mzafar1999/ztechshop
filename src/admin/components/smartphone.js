@@ -37,11 +37,11 @@ export const phoneBrandOptions = [
 //     const data = new FormData();
 //     data.append('file',files)
 //     data.append('upload_preset','dmdxb6ix')
-//     axios.post(
-//       "https://api.cloudinary.com/v1_1/dghtzvam5/image/upload",
-//       data
-//     ).then((res) => {
-//       console.log(res);
-//     })
+    // axios.post(
+    //   "https://api.cloudinary.com/v1_1/dghtzvam5/image/upload",
+    //   data
+    // ).then((res) => {
+    //   console.log(res);
+    // })
   
 //   };

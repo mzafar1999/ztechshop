@@ -19,7 +19,7 @@ import AboutUs from './components/AboutUs';
 function App() {
 
   
-  const [admin, setAdmin] = useState(false)
+  const [admin, setAdmin] = useState(true)
   
   if(!admin){
     return (

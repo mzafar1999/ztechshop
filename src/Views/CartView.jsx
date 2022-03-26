@@ -162,9 +162,11 @@ const CartView = () => {
                   </Title>
                 </Box>
               </Box>
-              <GreenStyledButton noBorder checkout className=" mt-5 mb-4 w-100">
+             <Box className="d-flex justify-content-center">
+             <GreenStyledButton noBorder checkout className=" w-100 mt-5 mb-4 w-100">
                 Checkout
               </GreenStyledButton>
+             </Box>
             </Col>
           </Row>
         </Container>

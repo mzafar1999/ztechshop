@@ -94,11 +94,7 @@ const PhoneCat = () => {
     setImageUrl("")
 
   }
-  function clearArray(array) {
-    while (array.length) {
-      array.pop();
-    }
-  }
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     let product = {
@@ -115,11 +111,14 @@ const PhoneCat = () => {
     setIsProductModalOpen(true)
     setImageUrl("")
     setAllPhoneImages([])
-    // allPhoneImages.splice(0, allPhoneImages.length)
     console.log(product);
   };
 
-  
+  let getAllData = async() => {
+    let res = await axios.get("http://localhost:5000/api/all-phones")
+    console.log(res.data);
+  }
+  getAllData()
 
   return (
     <Container className="">

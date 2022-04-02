@@ -64,8 +64,8 @@ const PhoneCat = () => {
     value: "Black",
     label: "Black",
   });
-  const [productFullName, setProductFullName] = useState("");
-  const [productModelName, setProductModelName] = useState("");
+  const [phoneFullName, setPhoneFullName] = useState("");
+  const [phoneModelName, setPhoneModelName] = useState("");
   const [phonePrice, setPhonePrice] = useState(0);
   const [phoneScreenSize, setPhoneScreenSize] = useState(0);
   const [allPhoneImages, setAllPhoneImages] = useState([]);
@@ -74,6 +74,8 @@ const PhoneCat = () => {
 
   const [modalIsOpen, setIsOpen] = useState(false);
   const [productModalOpen, setIsProductModalOpen] = useState(false)
+
+  const [loading, setLoading] = useState(false)
   const uploadImages = (e) => {
     let files = e.target.files;
     const formData = new FormData();
@@ -83,9 +85,10 @@ const PhoneCat = () => {
       formData.append("upload_preset", "dmdxb6ix");
     }
 
-
+    setLoading(true)
     axios.post("https://api.cloudinary.com/v1_1/dghtzvam5/image/upload", formData).then((res) => {
         setImageUrl(res.data.url);
+        setLoading(false)
         setIsOpen(true);
       });
   };
@@ -98,27 +101,34 @@ const PhoneCat = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     let product = {
-      productFullName,
-      productModelName,
+      phoneFullName,
+      phoneModelName,
       phonePrice,
       phoneScreenSize,
       phoneStorage: phoneStorage.value,
       phoneBrand: phoneBrand.value,
       phoneOS: phoneOS.value,
-      deviceColor: deviceColor.value,
-      images: allPhoneImages,
+      phoneColor: deviceColor.value,
+      phoneImages: allPhoneImages,
+      productDescription
     };
-    setIsProductModalOpen(true)
     setImageUrl("")
     setAllPhoneImages([])
+    setLoading(true);
+    axios.post("http://localhost:5000/api/add-phone",product).then((res) => {
+      setLoading(false)
+      setIsProductModalOpen(true)
+    }
+    
+    )
     console.log(product);
   };
 
-  let getAllData = async() => {
-    let res = await axios.get("http://localhost:5000/api/all-phones")
-    console.log(res.data);
-  }
-  getAllData()
+  // let getAllData = async() => {
+  //   let res = await axios.get("http://localhost:5000/api/all-phones")
+  //   console.log(res.data);
+  // }
+  // getAllData()
 
   return (
     <Container className="">
@@ -132,9 +142,9 @@ const PhoneCat = () => {
                   name="name"
                   type="text"
                   className="form-control"
-                  value={productFullName}
+                  value={phoneFullName}
                   onChange={(e) => {
-                    setProductFullName(e.target.value);
+                    setPhoneFullName(e.target.value);
                   }}
                 />
               </Box>
@@ -177,7 +187,9 @@ const PhoneCat = () => {
                   name="file" id="file"
                   hidden
                 />
-                <label htmlFor="file">Image to upload</label>
+                <label htmlFor="file">
+                  {loading?'Uploading...':'Image to upload'}
+                </label>
                 <Box>
                   {modalIsOpen ? <Modal setIsOpen={setIsOpen} /> : null}
                 </Box>
@@ -191,8 +203,8 @@ const PhoneCat = () => {
                   name="model_name"
                   type="model_name"
                   className="form-control"
-                  value={productModelName}
-                  onChange={(e) => setProductModelName(e.target.value)}
+                  value={phoneModelName}
+                  onChange={(e) => setPhoneModelName(e.target.value)}
                 />
               </Box>
               {/* Start of Color */}

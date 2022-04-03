@@ -4,7 +4,6 @@ import { combineReducers } from 'redux'
 import cartSlice from './cartSlice'
 import adminSlice from './adminSlice'
 import storage from 'redux-persist/lib/storage';
-// import { combineReducers } from 'redux';
 import {
     persistReducer,
     FLUSH,
@@ -21,12 +20,6 @@ const persistConfig = {
 };
 const rootReducer = combineReducers({products:productSlice,cart:cartSlice,admin:adminSlice})
 const persistedReducer = persistReducer(persistConfig, rootReducer);
-
-// const store = configureStore({
-//     reducer: rootReducer
-//   })
-  
-  // export default store
 
   export default configureStore({
     reducer: persistedReducer,

@@ -12,15 +12,17 @@ import Footer from './components/Footer';
 import SignUp from './components/Forms/SignUp';
 import SignIn from './components/Forms/SignIn';
 import Contact from './components/Forms/Contact';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import AllProducts from './admin/views/AllProducts';
 import AdminFrontend from './admin/AdminFrontend';
 import AboutUs from './components/AboutUs';
+import { fetchProducts } from './redux/productSlice';
+import { useDispatch } from 'react-redux';
 function App() {
-
   
   const [admin, setAdmin] = useState(false)
-  
+ 
+
   if(!admin){
     return (
       <Router>

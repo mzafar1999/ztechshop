@@ -1,9 +1,12 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import CardComp from "../components/CardComp";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { Box } from "../components/styledComponents";
+import { fetchProducts, getProducts } from '../redux/productSlice'
+
+
 export const ContainerFluid = styled.section``;
 export const Container = styled.section``;
 export const Row = styled.div``;
@@ -65,8 +68,13 @@ const FiltersBox = styled.div`
 `;
 
 const ShopView = () => {
-  let allProducts = useSelector((state) => state.products.allProducts);
+   
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(fetchProducts())
+  }, [])
 
+  let allProducts = useSelector((state) => state.products.allProducts);
   const [expandCategory, setexpandCategory] = useState(false);
   const expandCategoryHandler = () => {
     setexpandCategory(!expandCategory);
@@ -75,6 +83,10 @@ const ShopView = () => {
   const expandFiltersHandler = () => {
     setexpandFilters(!expandFilters);
   };
+
+  
+  
+
 
   return (
     <>
@@ -160,12 +172,14 @@ const ShopView = () => {
                 </SortBox>
               </Row>
               <Row className="row">
-                {allProducts.map((product) => {
+                {allProducts?.map((product) => {
+                  console.log(product);
                   return (
                     <Col className="col-xl-4 col-md-6">
+                      <h1>P</h1>
                       <CardComp
                         {...product}
-                        thumbnail={product.images[0].imageLink}
+                        thumbnail={product.phoneImages[0]}
                       />
                     </Col>
                   );

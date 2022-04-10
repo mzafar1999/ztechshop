@@ -51,9 +51,9 @@ const LinkComp = styled(Link)`
 
     }
 `
-    const CardComp = ({id,images,thumbnail,name,price,model_name,rating}) => {
-    let oldPrice = price;
-    let newPrice = parseInt(Math.round(price - (oldPrice * 0.2)))
+    const CardComp = ({_id,phoneImages,thumbnail,phoneFullName,phonePrice,phoneModelName,rating,qauntity}) => {
+    let oldPrice = phonePrice;
+    let newPrice = parseInt(Math.round(phonePrice - (oldPrice * 0.2)))
     
     const dispatch = useDispatch();
 
@@ -62,18 +62,18 @@ const LinkComp = styled(Link)`
 
     let qauntity = 1
     
-    dispatch(addProduct({id,images,thumbnail,name,price,model_name,rating,qauntity}));
+    dispatch(addProduct({_id,phoneImages,thumbnail,phoneFullName,phonePrice,phoneModelName,rating,qauntity}));
   };
     return (
     <Card className='card mx-2 mb-5 shadow-sm p-1 d-flex flex-column justify-content-around'>
-                <LinkComp to={`/product/${id}`}>
+                <LinkComp to={`/product/${_id}`}>
                 <ImageWrapper className='my-auto'>
                     <Image className='w-75 my-auto mt-4' src={thumbnail}/>
                 </ImageWrapper>
                     </LinkComp>
                 <Text className='h5 text-center mt-3 mb-1 text-capitalize'>
-                   <LinkComp to={`/product/${id}`}>
-                   {name}
+                   <LinkComp to={`/product/${_id}`}>
+                   {phoneFullName}
                    </LinkComp>
                 </Text>
               

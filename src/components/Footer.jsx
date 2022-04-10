@@ -18,8 +18,7 @@ const NavLink = styled(Link)`
     color: white;
 	&:hover{
     text-decoration: none;
-    color:black;
-    
+    color:black; 
   }
     
 `;

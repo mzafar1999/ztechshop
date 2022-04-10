@@ -33,26 +33,28 @@ const BuyNowBox = styled.div`
 const SingleProductView = () => {
   const allProducts = useSelector((state) => state.products.allProducts);
   const location = useLocation();
-  let productId = location.pathname.split("/")[2] * 1;
+  let productId = location.pathname.split("/")[2] ;
   const dispatch = useDispatch();
+  console.log(allProducts);
 
   //First get all product from state
   //Find product and dispatch it to the reducer
   useEffect(() => {
-    let product = allProducts.find((product) => {
-      return product.id === productId;
+    let findProduct = allProducts?.find((product) => {
+      return product._id == productId;
     });
-    dispatch(selectCurretProduct(product));
-  }, [dispatch, productId, allProducts]);
+    dispatch(selectCurretProduct(findProduct));
+  }, []);
 
   //My Product Info
   let currentProduct = useSelector((state) => state.products.currentProduct);
-  let imagesOfProduct = currentProduct ? currentProduct.images : null;
-  let oldPrice = currentProduct.price;
-  let newPrice = parseInt(Math.round(currentProduct.price - oldPrice * 0.2));
+  console.log(currentProduct);
+  let imagesOfProduct = currentProduct ? currentProduct.phoneImages : null;
+  let oldPrice = currentProduct.phonePrice;
+  let newPrice = parseInt(Math.round(currentProduct.phonePrice - oldPrice * 0.2));
 
-  let lessDescription = currentProduct.description
-    ? currentProduct.description.substring(0, 150)
+  let lessDescription = currentProduct.productDescription
+    ? currentProduct.productDescription.substring(0, 150)
     : null;
   const [moreDescription, setMoreDescription] = useState(false);
   let [qauntity, setQauntity] = useState(1);
@@ -79,42 +81,42 @@ const SingleProductView = () => {
             className="col-lg-6 col-lg-5 mx-md-4"
             style={{ backgroundColor: "#ffffff" }}
           >
-            <Title className="h2"> {currentProduct.name} </Title>
+            <Title className="h2"> {currentProduct.phoneFullName} </Title>
             <Text>
-              <strong>Condition</strong> : {currentProduct.condition}{" "}
+              {/* <strong>Condition</strong> : {currentProduct.condition}{" "} */}
             </Text>
             <Title className="h4"> $ {newPrice} </Title>
             <StarDiv className="">
               <ReactStars
                 edit={false}
                 size={30}
-                value={currentProduct.rating}
+                // value={currentProduct.rating}
               />
             </StarDiv>
-            Rating {currentProduct.rating} | 36 Comments
+            {/* Rating {currentProduct.rating} | 36 Comments */}
             <Box>
               <strong>Brand</strong> :
               <Text className="d-inline text-capitalize">
-                {currentProduct.brand}
+                {/* {currentProduct.brand} */}
               </Text>
             </Box>
             <Box>
               <Title className="h3">Description</Title>
               <Title className="h6">
-                {moreDescription ? currentProduct.description : lessDescription}{" "}
+                {/* {moreDescription ? currentProduct.productDescription : lessDescription}
                 <Text
                   className="text-success"
                   role="button"
                   onClick={() => setMoreDescription(!moreDescription)}
                 >
                   <u>{moreDescription ? "See less" : "Read More"}</u>
-                </Text>
+                </Text> */}
               </Title>
             </Box>
             <Box className="mb-1">
               <strong>Color </strong>:
               <Text className="d-inline text-capitalize">
-                {currentProduct.color}
+                {currentProduct.phoneColor}
               </Text>
             </Box>
             <Box>
@@ -123,25 +125,25 @@ const SingleProductView = () => {
                 <li>
                   Model:{" "}
                   <Text className="d-inline text-capitalize">
-                    {currentProduct.model_name}
+                    {currentProduct.phoneModelName}
                   </Text>
                 </li>
                 <li>
                   Storage:{" "}
                   <Text className="d-inline text-capitalize">
-                    {currentProduct.storage} GB
+                    {currentProduct.phoneStorage} GB
                   </Text>
                 </li>
                 <li>
                   Operating System:{" "}
                   <Text className="d-inline text-capitalize">
-                    {currentProduct.os}
+                    {currentProduct.phoneOS}
                   </Text>
                 </li>
                 <li>
                   Screen Size:{" "}
                   <Text className="d-inline text-capitalize">
-                    {currentProduct.size}
+                    {currentProduct.phoneScreenSize} inch
                   </Text>
                 </li>
               </ul>
@@ -183,7 +185,7 @@ const SingleProductView = () => {
           </Col>
         </Row>
       </ContainerSmall>
-      <RelatedProducts />
+      {/* <RelatedProducts /> */}
     </Container>
   );
 };

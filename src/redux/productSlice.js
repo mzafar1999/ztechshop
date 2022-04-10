@@ -34,7 +34,6 @@ const productsSLice = createSlice({
        },
        getProductsSucceed: (state,action)=>{
          state.allProducts=action.payload
-         console.log(action.payload);
          state.loading=false
          state.error=false
        },

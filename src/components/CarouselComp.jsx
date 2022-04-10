@@ -14,7 +14,7 @@ const CarouselComp = ({images}) => {
     <Carousel  infiniteLoop useKeyboardArrows autoPlay>
         {(filteredImages.map((itemImage,i) => {
           return  <div key={i}>
-          <img src= {itemImage.imageLink} alt='product' />
+          <img src= {itemImage} alt='product' />
       </div> 
         }))}
     </Carousel>

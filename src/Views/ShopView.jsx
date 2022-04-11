@@ -173,7 +173,6 @@ const ShopView = () => {
               </Row>
               <Row className="row">
                 {allProducts?.map((product) => {
-                  console.log(product);
                   return (
                     <Col className="col-xl-4 col-md-6">
                       <CardComp

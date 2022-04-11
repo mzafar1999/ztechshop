@@ -6,6 +6,12 @@ import '../App.css'
 import { addProduct } from '../redux/cartSlice';
 import { useDispatch } from 'react-redux';
 import { GreenStyledButton } from './styledComponents';
+export function newPriceCalculate(oldPrice,phonePrice) {
+    oldPrice = phonePrice
+    let newPrice = parseInt(Math.round(phonePrice - (oldPrice * 0.2)))
+    return newPrice
+} 
+
 const Text = styled.p`
     font-size: ${props=>props.medium && '14px'};
     font-weight: ${props=>props.bold && 'bold'} ;
@@ -53,8 +59,9 @@ const LinkComp = styled(Link)`
 `
     const CardComp = ({_id,phoneImages,thumbnail,phoneFullName,phonePrice,phoneModelName,rating,qauntity}) => {
     let oldPrice = phonePrice;
-    let newPrice = parseInt(Math.round(phonePrice - (oldPrice * 0.2)))
     
+    
+
     const dispatch = useDispatch();
 
   //Add product to cart
@@ -81,7 +88,7 @@ const LinkComp = styled(Link)`
                 <ReactStars  edit={false} size={30} value={rating} />
                 </StarDiv>
                 <Text className='text-center mt-2' bold>
-                <Strike>${oldPrice}</Strike>  {newPrice}$
+                <Strike>${oldPrice}</Strike>  {newPriceCalculate(phonePrice,phonePrice)}$
                 </Text>
                 <GreenStyledButton onClick={addProductToCart} className='mb-3'>add to cart</GreenStyledButton>
             </Card>

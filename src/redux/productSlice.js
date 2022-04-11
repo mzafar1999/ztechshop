@@ -56,7 +56,6 @@ export function fetchProducts() {
       dispatch(getProductsLoading())
       try {
         const res = await axios.get('http://localhost:5000/api/all-phones')
-        console.log(res);
         dispatch(getProductsSucceed(res.data))
 
       } catch (error) {

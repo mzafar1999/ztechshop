@@ -5,6 +5,7 @@ import { MdOutlineAddCircleOutline } from "react-icons/md";
 import { TiDeleteOutline } from "react-icons/ti";
 import { useDispatch } from "react-redux";
 import { qtyDec, qtyInc, removeItemFromCart } from "../redux/cartSlice";
+import { newPriceCalculate } from "./CardComp";
 const Card = styled.div`
   min-height: 120px;
   width: 100%;
@@ -37,7 +38,7 @@ const ItemDetailsBox = styled.div`
 `
 
 
-const SingleItemCart = ({ id, name, price, images, qauntity }) => {
+const SingleItemCart = ({ _id,phoneImages,phoneFullName,phonePrice,qauntity}) => {
   const dispatch = useDispatch();
   let increaseQty = (id) => {
     dispatch(qtyInc(id));
@@ -50,17 +51,18 @@ const SingleItemCart = ({ id, name, price, images, qauntity }) => {
     dispatch(removeItemFromCart(id)) 
   }
 
+
   return (
     <Card className="row d-flex border-bottom align-items-center">
       <ItemDetailsBox className="d-flex align-items-center col-md-5 col-sm-12">
         <ImageWrapper>
-          <Image src={images[0].imageLink}></Image>
+          <Image src={phoneImages[0]}></Image>
         </ImageWrapper>
         <Box className="w100">
           <Title className="h6 mx-4 text-capitalize w-100" noPadding noBorder>
-            {name}
+            {phoneFullName}
           </Title>
-          <Text className="mx-4">${price}</Text>
+          <Text className="mx-4">${phonePrice}</Text>
         </Box>
       </ItemDetailsBox>
 
@@ -69,23 +71,23 @@ const SingleItemCart = ({ id, name, price, images, qauntity }) => {
           className="mx-2"
           style={{fontSize:'30px'}}
           role="button"
-          onClick={() => increaseQty(id)}
+          onClick={() => increaseQty(_id)}
         />
         <Box className="border px-3 py-1 border-success rounded font-weight-bold">
           {qauntity}
         </Box>
         <BiMinusCircle
-          onClick={() => decreaseQty(id)}
+          onClick={() => decreaseQty(_id)}
           className="mx-2"
           style={{fontSize:'30px'}}
           role="button"
         />
       </Box>
       <PriceBox className="col-md-2 mt-sm-3 col-sm-12  text-center">
-        <Title className="h5">${price * qauntity}</Title>
+        <Title className="h5">${newPriceCalculate(phonePrice,phonePrice)* qauntity}</Title>
       </PriceBox>
       <Box className="col-1 mb-2">
-      <TiDeleteOutline onClick={()=> removeItem(id)} size={30} style={{color:'red'}} role='button' />
+      <TiDeleteOutline onClick={()=> removeItem(_id)} size={30} style={{color:'red'}} role='button' />
       </Box>
     </Card>
   );

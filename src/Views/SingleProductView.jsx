@@ -35,7 +35,6 @@ const SingleProductView = () => {
   const location = useLocation();
   let productId = location.pathname.split("/")[2] ;
   const dispatch = useDispatch();
-  console.log(allProducts);
 
   //First get all product from state
   //Find product and dispatch it to the reducer
@@ -48,7 +47,6 @@ const SingleProductView = () => {
 
   //My Product Info
   let currentProduct = useSelector((state) => state.products.currentProduct);
-  console.log(currentProduct);
   let imagesOfProduct = currentProduct ? currentProduct.phoneImages : null;
   let oldPrice = currentProduct.phonePrice;
   let newPrice = parseInt(Math.round(currentProduct.phonePrice - oldPrice * 0.2));
@@ -64,7 +62,6 @@ const SingleProductView = () => {
   };
   const increaseQty = () => {
     setQauntity((qauntity += 1));
-    console.log(qauntity);
   };
   const decreaseQty = () => {
     qauntity > 0 && setQauntity((qauntity -= 1));
@@ -103,14 +100,14 @@ const SingleProductView = () => {
             <Box>
               <Title className="h3">Description</Title>
               <Title className="h6">
-                {/* {moreDescription ? currentProduct.productDescription : lessDescription}
+                {moreDescription ? currentProduct.productDescription : lessDescription}
                 <Text
                   className="text-success"
                   role="button"
                   onClick={() => setMoreDescription(!moreDescription)}
                 >
                   <u>{moreDescription ? "See less" : "Read More"}</u>
-                </Text> */}
+                </Text>
               </Title>
             </Box>
             <Box className="mb-1">

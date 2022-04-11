@@ -6,13 +6,13 @@ import { MdAccountCircle } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { NavLink } from "./styledComponents";
 const Container = styled.div`
-  height: ${(props) => props.large && "90px"};
   width: 100%;
   background-color: #ffffff;
   -webkit-box-shadow: -1px 8px 10px -4px #0000004b;
   box-shadow: -1px 8px 10px -4px #00000068;
   z-index: 100;
   display: flex;
+  position: relative;
   @media (max-width: 960px) {
     flex-direction: column;
   }
@@ -20,6 +20,7 @@ const Container = styled.div`
 const Left = styled.div`
   @media (max-width: 960px) {
     width: 100%;
+    height: 70px;
   }
 `;
 const Center = styled.div`
@@ -28,12 +29,19 @@ const Center = styled.div`
   @media (max-width: 960px) {
     flex-direction: column;
     width: 100%;
+    height: ${props=>props.expand?'180px':'0px'};
+    transition: height 500ms;
+    overflow: hidden;
+    
   }
 `;
 const Right = styled.div`
   display: flex;
   @media (max-width: 960px) {
     width: 100%;
+    overflow: hidden;
+    height: ${props=>props.expand?'30px':'0px'};
+    transition: height 500ms;
   }
 `;
 const ImageWrapper = styled.div`
@@ -86,6 +94,17 @@ const Box = styled.div`
 const Text = styled.p`
   margin: 10px;
 `;
+
+const HumbergerBox = styled.div`
+    display: none;
+    @media (max-width:960px) {
+      display: block;
+      cursor: pointer;
+      position: relative;
+      right: 20px;
+    }
+`
+
 const Navbar = () => {
   const [smallScreen, setSmallScreen] = useState(true);
   let width;
@@ -98,64 +117,9 @@ const Navbar = () => {
     }
   };
   const [showNav, setShowNav] = useState(false);
+  console.log(showNav);
   return (
     <>
-      {smallScreen ? (
-        <Container className=" justify-content-between align-items-center">
-          <Left className="d-flex justify-content-between align-items-center">
-            <ImageWrapper className="">
-              <NavLink to='/'>
-                <Image src="/images/logoz.png" />
-              </NavLink>
-            </ImageWrapper>
-            <Box>
-              <GiHamburgerMenu
-                onClick={() => setShowNav(!showNav)}
-                size={35}
-                className="mx-3"
-              />
-            </Box>
-          </Left>
-          <Center className={showNav ? "d-flex" : "d-none"}>
-            <LinkWrapper>
-              <NavLink to="/">Home</NavLink>
-            </LinkWrapper>
-            <LinkWrapper>
-              <NavLink to="/shop">Shop</NavLink>
-            </LinkWrapper>
-            <LinkWrapper>
-              <NavLink to="/about-us">About Us</NavLink>
-            </LinkWrapper>
-            <LinkWrapper>
-              <NavLink to="/contact">Contact</NavLink>
-            </LinkWrapper>
-          </Center>
-          <Right className={showNav ? "d-block d-flex mb-3 px-3 " : "d-none"}>
-            <ReactIconWrapper>
-              <BiSearch />
-            </ReactIconWrapper>
-            <ReactIconWrapper>
-              <NavLink to="/cart">
-                <FaOpencart />
-              </NavLink>
-            </ReactIconWrapper>
-            <ReactIconWrapper>
-              <MdAccountCircle />
-              <AccountBox>
-                <NavLink to="/sign-up">
-                  <Text>Sign-Up</Text>
-                </NavLink>
-                <NavLink to="/sign-in">
-                  <Text>Sign-In</Text>
-                </NavLink>
-                <NavLink to="/sign-in">
-                  <Text>Admin</Text>
-                </NavLink>
-              </AccountBox>
-            </ReactIconWrapper>
-          </Right>
-        </Container>
-      ) : (
         <Container className=" justify-content-around align-items-center">
           <Left className="d-flex justify-content-between align-items-center">
             <ImageWrapper className="">
@@ -163,8 +127,15 @@ const Navbar = () => {
                 <Image src="/images/logoz.png" />
               </NavLink>
             </ImageWrapper>
+            <HumbergerBox>
+            <GiHamburgerMenu
+                onClick={() => setShowNav(!showNav)}
+                size={35}
+                className="cursor-pointer"
+              />
+            </HumbergerBox>
           </Left>
-          <Center className={"d-flex"}>
+          <Center className={"d-flex"} expand={showNav?'expand':null} >
             <LinkWrapper>
               <NavLink to="/">Home</NavLink>
             </LinkWrapper>
@@ -178,7 +149,7 @@ const Navbar = () => {
               <NavLink to="/contact">Contact</NavLink>
             </LinkWrapper>
           </Center>
-          <Right className={"d-block d-flex mb-3 px-3 "}>
+          <Right className={"d-block d-flex mb-1 px-3 "}  expand={showNav?'expand':null} >
             <ReactIconWrapper>
               <BiSearch />
             </ReactIconWrapper>
@@ -205,7 +176,7 @@ const Navbar = () => {
             </ReactIconWrapper>
           </Right>
         </Container>
-      )}
+      
     </>
   );
 };

@@ -176,7 +176,6 @@ const ShopView = () => {
                   console.log(product);
                   return (
                     <Col className="col-xl-4 col-md-6">
-                      <h1>P</h1>
                       <CardComp
                         {...product}
                         thumbnail={product.phoneImages[0]}

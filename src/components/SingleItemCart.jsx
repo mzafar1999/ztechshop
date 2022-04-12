@@ -51,12 +51,22 @@ const SingleItemCart = ({ _id,phoneImages,phoneFullName,phonePrice,qauntity}) =>
     dispatch(removeItemFromCart(id)) 
   }
 
+  let thumbnail
+  if(phoneImages){
+      if(phoneImages.length>0){
+          thumbnail = phoneImages[0]
+      }else{
+          thumbnail = '/images/loading.jpg'
+      }
+  }else{
+      thumbnail = '/images/loading.jpg'
+  }
 
   return (
     <Card className="row d-flex border-bottom align-items-center">
       <ItemDetailsBox className="d-flex align-items-center col-md-5 col-sm-12">
         <ImageWrapper>
-          <Image src={phoneImages[0]}></Image>
+          <Image src={thumbnail}></Image>
         </ImageWrapper>
         <Box className="w100">
           <Title className="h6 mx-4 text-capitalize w-100" noPadding noBorder>

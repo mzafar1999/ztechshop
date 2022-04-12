@@ -177,8 +177,7 @@ const ShopView = () => {
                     <Col className="col-xl-4 col-md-6">
                       <CardComp
                         {...product}
-                        // thumbnail={product?.phoneImages[0]}
-                      />
+                                          />
                     </Col>
                   );
                 })}

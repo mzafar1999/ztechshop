@@ -57,7 +57,7 @@ const LinkComp = styled(Link)`
 
     }
 `
-    const CardComp = ({_id,phoneImages,thumbnail,phoneFullName,phonePrice,phoneModelName,rating,qauntity}) => {
+    const CardComp = ({_id,phoneImages,phoneFullName,phonePrice,phoneModelName,rating,qauntity}) => {
     let oldPrice = phonePrice;
     
     
@@ -69,8 +69,9 @@ const LinkComp = styled(Link)`
 
     let qauntity = 1
     
-    dispatch(addProduct({_id,phoneImages,thumbnail,phoneFullName,phonePrice,phoneModelName,rating,qauntity}));
+    dispatch(addProduct({_id,phoneImages,phoneFullName,phonePrice,phoneModelName,rating,qauntity}));
   };
+    let thumbnail = phoneImages[0]
     return (
     <Card className='card mx-2 mb-5 shadow-sm p-1 d-flex flex-column justify-content-around'>
                 <LinkComp to={`/product/${_id}`}>

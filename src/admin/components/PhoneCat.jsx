@@ -9,7 +9,6 @@ import {
   GreenStyledButton,
   Input,
   Label,
-  UploadInput,
 } from "../../components/styledComponents";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
@@ -101,6 +100,7 @@ const PhoneCat = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     let product = {
+      productCategory:'phone',
       phoneFullName,
       phoneModelName,
       phonePrice,
@@ -124,11 +124,6 @@ const PhoneCat = () => {
     console.log(product);
   };
 
-  // let getAllData = async() => {
-  //   let res = await axios.get("http://localhost:5000/api/all-phones")
-  //   console.log(res.data);
-  // }
-  // getAllData()
 
   return (
     <Container className="">

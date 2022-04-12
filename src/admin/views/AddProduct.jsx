@@ -1,43 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import {
-  Box,
-  Col,
-  Form,
-  GreenStyledButton,
-  Input,
-  Label,
-} from "../../components/styledComponents";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Select from "react-select";
-import {
-  phoneBrandOptions,
-  phoneColorOptions,
-  phoneOSOptions,
-  phoneStorageOptionos,
-} from "../components/smartphone";
-import {
-  laptopBrandOptions,
-  laptopColorOptions,
-  laptopOSOptions,
-  laptopStorageOptions,
-} from "../components/laptop";
-import {
-  consoleBrandOptions,
-  consoleColorOptions,
-  consoleStorageOptions,
-} from "../components/console";
-import {
-  TVBrandOptions,
-  TVColorOptions,
-  TVSizeOptions,
-} from "../components/tv";
-import { Textarea } from "../../components/Forms/Contact";
+
 import axios from "axios";
 import PhoneCat from "../components/PhoneCat";
-import { useDispatch, useSelector } from "react-redux";
-import { selectCategory } from "../../redux/adminSlice";
+import {  useSelector } from "react-redux";
 import LaptopCat from "../components/LaptopCat";
 const Container = styled.div`
   margin: 0 auto;

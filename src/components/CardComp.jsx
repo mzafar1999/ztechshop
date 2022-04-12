@@ -57,11 +57,9 @@ const LinkComp = styled(Link)`
 
     }
 `
-    const CardComp = ({_id,phoneImages,phoneFullName,phonePrice,phoneModelName,rating,qauntity}) => {
+    const CardComp = ({_id,phoneImages,phoneFullName,phonePrice,phoneModelName,rating}) => {
     let oldPrice = phonePrice;
     
-    
-
     const dispatch = useDispatch();
 
   //Add product to cart
@@ -72,10 +70,15 @@ const LinkComp = styled(Link)`
     dispatch(addProduct({_id,phoneImages,phoneFullName,phonePrice,phoneModelName,rating,qauntity}));
   };
     let thumbnail
-    if(phoneImages.length>0){
-        thumbnail = phoneImages[0]
+    if(phoneImages){
+        if(phoneImages.length>0){
+            thumbnail = phoneImages[0]
+        }else{
+            thumbnail = '/images/loading.jpg'
+        }
     }else{
         thumbnail = '/images/loading.jpg'
+
     }
     return (
     <Card className='card mx-2 mb-5 shadow-sm p-1 d-flex flex-column justify-content-around'>

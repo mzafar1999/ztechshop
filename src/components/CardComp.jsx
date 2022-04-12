@@ -71,12 +71,17 @@ const LinkComp = styled(Link)`
     
     dispatch(addProduct({_id,phoneImages,phoneFullName,phonePrice,phoneModelName,rating,qauntity}));
   };
-    // let thumbnail = phoneImages[0]
+    let thumbnail
+    if(phoneImages.length>0){
+        thumbnail = phoneImages[0]
+    }else{
+        thumbnail = '/images/loading.jpg'
+    }
     return (
     <Card className='card mx-2 mb-5 shadow-sm p-1 d-flex flex-column justify-content-around'>
                 <LinkComp to={`/product/${_id}`}>
                 <ImageWrapper className='my-auto'>
-                    <Image className='w-75 my-auto mt-4' src={'https://www.pakmobizone.pk/wp-content/uploads/2021/10/Apple-iphone-13-Midnight-2.png'}/>
+                    <Image className='w-75 my-auto mt-4' src={thumbnail}/>
                 </ImageWrapper>
                     </LinkComp>
                 <Text className='h5 text-center mt-3 mb-1 text-capitalize'>

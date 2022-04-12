@@ -117,7 +117,6 @@ const Navbar = () => {
     }
   };
   const [showNav, setShowNav] = useState(false);
-  console.log(showNav);
   return (
     <>
         <Container className=" justify-content-around align-items-center">

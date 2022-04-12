@@ -16,7 +16,7 @@ export const getProducts = createAsyncThunk(
     'products/getProducts',
     // callback function
     async (thunkAPI) => {
-      const res = await fetch('http://localhost:5000/api/all-phones').then(
+      const res = await fetch('https://node-server-zecommece.herokuapp.com/api/all-phones').then(
       (data) => data.json()
     )
     return res
@@ -55,7 +55,7 @@ export function fetchProducts() {
     return async (dispatch) =>{
       dispatch(getProductsLoading())
       try {
-        const res = await axios.get('http://localhost:5000/api/all-phones')
+        const res = await axios.get('https://node-server-zecommece.herokuapp.com/api/all-phones')
         dispatch(getProductsSucceed(res.data))
 
       } catch (error) {

@@ -7,7 +7,6 @@ import storage from 'redux-persist/lib/storage';
 import {
     persistReducer,
     FLUSH,
-    REHYDRATE,
     PAUSE,
     PERSIST,
     PURGE,
@@ -26,7 +25,7 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
             serializableCheck: {
-                ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+                ignoredActions: [FLUSH, PAUSE, PERSIST, PURGE, REGISTER],
             },
         }),
 });

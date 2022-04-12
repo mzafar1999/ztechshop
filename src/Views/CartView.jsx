@@ -126,7 +126,7 @@ const CartView = () => {
               <Box className="d-flex flex-column justify-content-between">
                 <Box className="d-flex justify-content-between">
                   <Title className="my-2" medium noBorder>
-                    ITEMS 3
+                    ITEMS
                   </Title>
                   <Title className="my-2" medium noBorder>
                     $ {totalPrice}

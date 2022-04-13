@@ -7,7 +7,7 @@ import { newPriceCalculate, Strike } from "./CardComp";
 const Card = styled.div`
   cursor: pointer;
   min-height: 430px;
-  max-height: 440px;
+  max-height: 460px;
   @media (min-width:491px) {
     min-height: 420px;
   }
@@ -29,12 +29,13 @@ const Col = styled.div`
 const RelatedProducts = () => {
   const allProducts = useSelector(state=>state.products.allProducts)
   const currentProductCat = useSelector(state=>state.products.currentProduct.productCateogry)
+  const currentProduct = useSelector(state=>state.products.currentProduct)
 
-  let relatedProducts = allProducts.filter((product)=>product.productCateogry===currentProductCat).slice(1,5)
+  let allProductsFilter = allProducts.filter((product)=>product.productCateogry===currentProductCat)
+  let relatedProducts = allProductsFilter.filter((product)=>product._id!==currentProduct._id)
   let phoneImages = relatedProducts.map((product)=>{
       return product.phoneImages[0]
   })
-  console.log(phoneImages);
 
   let thumbnail
   if(phoneImages){
@@ -46,7 +47,6 @@ const RelatedProducts = () => {
   }else{
       thumbnail = '/images/loading.jpg'
   }
-  console.log(relatedProducts);
 
   return (
     <Container className="container-fluid" style={{ backgroundColor: "#fff" }}>

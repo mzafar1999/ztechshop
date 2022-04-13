@@ -42,7 +42,7 @@ const Image = styled.img`
     height: 100%;
     object-fit:contain ;
 `
-const Strike = styled.del`
+export const Strike = styled.del`
     color: #cc3b3b;
     stroke:black ;
 `
@@ -78,7 +78,6 @@ const LinkComp = styled(Link)`
         }
     }else{
         thumbnail = '/images/loading.jpg'
-
     }
     return (
     <Card className='card mx-2 mb-5 shadow-sm p-1 d-flex flex-column justify-content-around'>

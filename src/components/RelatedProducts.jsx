@@ -2,10 +2,12 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { Container, Row,Title,Text,ImageWrapper,StarDiv, Box } from "./styledComponents";
 import {TiStarFullOutline,TiStarHalfOutline,TiStarOutline} from 'react-icons/ti'
+import { newPriceCalculate, Strike } from "./CardComp";
 
 const Card = styled.div`
   cursor: pointer;
-
+  min-height: 430px;
+  max-height: 440px;
   @media (min-width:491px) {
     min-height: 420px;
   }
@@ -26,8 +28,25 @@ const Col = styled.div`
 `
 const RelatedProducts = () => {
   const allProducts = useSelector(state=>state.products.allProducts)
-  const currentProductCat = useSelector(state=>state.products.currentProduct.category)
-  let relatedProducts = allProducts.filter((product)=>product.category===currentProductCat).slice(1,5)
+  const currentProductCat = useSelector(state=>state.products.currentProduct.productCateogry)
+
+  let relatedProducts = allProducts.filter((product)=>product.productCateogry===currentProductCat).slice(1,5)
+  let phoneImages = relatedProducts.map((product)=>{
+      return product.phoneImages[0]
+  })
+  console.log(phoneImages);
+
+  let thumbnail
+  if(phoneImages){
+      if(phoneImages.length>0){
+          thumbnail = phoneImages
+      }else{
+          thumbnail = '/images/loading.jpg'
+      }
+  }else{
+      thumbnail = '/images/loading.jpg'
+  }
+  console.log(relatedProducts);
 
   return (
     <Container className="container-fluid" style={{ backgroundColor: "#fff" }}>
@@ -43,9 +62,9 @@ const RelatedProducts = () => {
                <Box className="col-6 col-lg-3 mb-5 h-50">
                   <Card key={i} className="p-3 shadow p-1">
                   <ImageWrapper>
-                    <Image src={product.images[0].imageLink} />
+                    <Image src={product?.phoneImages[0]} />
                   </ImageWrapper>
-                  <Text className="text-center">{product.name}</Text>
+                  <Text className="text-center">{product?.phoneFullName}</Text>
                   <Text>{product.gpu}</Text>
                   <StarDiv className='mb-3 text-center'>
                    <TiStarFullOutline style={{color:'#FFEB00'}} size={25}/>
@@ -54,7 +73,9 @@ const RelatedProducts = () => {
                    <TiStarHalfOutline style={{color:'#FFEB00'}} size={25}/>
                    <TiStarOutline style={{color:'#FFEB00'}} size={25}/>
                 </StarDiv>
-                  <Text className="text-center">{product.price-(product.price*0.2)}$</Text>
+                <Text className='text-center mt-2' bold>
+                <Strike>${product.phonePrice}</Strike>  {newPriceCalculate(product.phonePrice,product.phonePrice)}$
+                </Text>
                 </Card>
                </Box>
               );

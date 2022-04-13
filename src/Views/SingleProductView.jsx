@@ -182,7 +182,7 @@ const SingleProductView = () => {
           </Col>
         </Row>
       </ContainerSmall>
-      {/* <RelatedProducts /> */}
+      <RelatedProducts />
     </Container>
   );
 };

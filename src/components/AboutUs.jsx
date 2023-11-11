@@ -12,9 +12,9 @@ const AboutUs = () => {
             </Col>
             <Col className='col-sm-6 my-s-5'>
                 <Text>
-                    <Title className='h3'>Welcome to the Z-Tech Store</Title>
+                    <Title className='h3'>Welcome to the ZE-Commerce Store</Title>
                     <Text>
-                    Z-Tech Stores, commonly referred to as Z-Tech, is a multinational conglomerate corporation headquartered in Kōnan Minato, Tokyo, Japan. Its diversified business is primarily focused on the electronics (TV, gaming consoles, smarphones and laptops), game, entertainment tech services sectors. The company is one of the leading manufacturers of electronic products for the consumer and professional markets. Z-Tech is ranked 105th on the 2014 list of Fortune Global 500.
+                    ZE-Commerce Stores, commonly referred to as , ZE-Commerce is a multinational conglomerate corporation headquartered in Paris, France. Its diversified business is primarily focused on the electronics (TV, gaming consoles, smartphones and laptops), game, entertainment tech services sectors. The company is one of the leading manufacturers of electronic products for the consumer and professional markets. ZE-Commerce is ranked 105th on the 2014 list of Fortune Global 500.
                     </Text>
                     <ImageWrapper>
                         <img width={'100%'} src='/images/store.jpg'/>

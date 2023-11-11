@@ -72,7 +72,7 @@ const SingleItemCart = ({ _id,phoneImages,phoneFullName,phonePrice,qauntity}) =>
           <Title className="h6 mx-4 text-capitalize w-100" noPadding noBorder>
             {phoneFullName}
           </Title>
-          <Text className="mx-4">${phonePrice}</Text>
+          <Text className="mx-4">${newPriceCalculate(phonePrice,phonePrice)}</Text>
         </Box>
       </ItemDetailsBox>
 

@@ -99,13 +99,13 @@ const Footer = () => {
 					<Col className="col-md-4 pt-5">
 						<Title className=" pb-3 logo">Z-Shop</Title>
 						<TextAndIconWrapper className="my-2">
-							<MdLocationOn />212 Hayatabad-Peshawar, 25100
+							<MdLocationOn />Aurillac, France, 15000
 						</TextAndIconWrapper>
 						<TextAndIconWrapper className="my-2">
-							<AiFillPhone /> <NavLink to={`/`}> 091-502120</NavLink>{' '}
+							<AiFillPhone /> <NavLink to={`/`}> 0780 43 46 2121</NavLink>{' '}
 						</TextAndIconWrapper>
 						<TextAndIconWrapper className="my-2">
-							<MdEmail /> <NavLink to={`/`}>z-tech@gmail.com </NavLink>{' '}
+							<MdEmail /> <NavLink to={`/`}>ze-commerce@gmail.com </NavLink>{' '}
 						</TextAndIconWrapper>
 					</Col>
 					<Col className="col-md-4 pt-5">
